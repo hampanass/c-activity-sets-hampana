@@ -1,0 +1,40 @@
+(base) hampana@Manu-2 set02 % gcc problem01.c
+(base) hampana@Manu-2 set02 % gcc problem01.c -o problem01
+(base) hampana@Manu-2 set02 % gcc -g -O0 problem01.c -o problem01.exe
+(base) hampana@Manu-2 set02 % lldb ./problem01
+(lldb) target create "./problem01"
+Current executable set to '/Users/hampana/Desktop/c-activity-sets-hampana/set02/problem01' (arm64).
+(lldb) r
+Process 51271 launched: '/Users/hampana/Desktop/c-activity-sets-hampana/set02/problem01' (arm64)
+Enter the base of the triangle
+1
+Enter the height of the triangle
+5
+Area of the triangle is 2.500000Process 51271 exited with status = 0 (0x00000000) 
+(lldb) log enable lldb default -f problem01.log
+(lldb) b main
+Breakpoint 1: where = problem01`main, address = 0x0000000100003dec
+(lldb) r
+Process 51332 launched: '/Users/hampana/Desktop/c-activity-sets-hampana/set02/problem01' (arm64)
+Process 51332 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100003dec problem01`main
+problem01`main:
+->  0x100003dec <+0>:  sub    sp, sp, #0x30
+    0x100003df0 <+4>:  stp    x29, x30, [sp, #0x20]
+    0x100003df4 <+8>:  add    x29, sp, #0x20
+    0x100003df8 <+12>: mov    w8, #0x0
+Target 0: (problem01) stopped.
+(lldb) s
+Process 51332 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
+    frame #0: 0x0000000100003df0 problem01`main + 4
+problem01`main:
+->  0x100003df0 <+4>:  stp    x29, x30, [sp, #0x20]
+    0x100003df4 <+8>:  add    x29, sp, #0x20
+    0x100003df8 <+12>: mov    w8, #0x0
+    0x100003dfc <+16>: str    w8, [sp, #0xc]
+Target 0: (problem01) stopped.
+(lldb) q
+Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] y
+(base) hampana@Manu-2 set02 % 
