@@ -1,0 +1,1 @@
+(base) hampana@Manu-2 set01 % gcc problem05.c -o problem05  

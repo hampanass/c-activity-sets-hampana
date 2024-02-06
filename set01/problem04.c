@@ -1,6 +1,6 @@
 #include <stdio.h>
 int input();
-int add(int a, int b, int *sum);
+void add(int a, int b, int *sum);
 void output(int a, int b, int sum);
 
 
@@ -9,7 +9,7 @@ int main()
 int a, b, sum;
 a=input();
 b=input();
-sum=add(a,b,&sum);
+add(a,b,&sum);
 output(a,b, sum);
 return 0;
 }
@@ -22,9 +22,10 @@ scanf("%d", &x);
 return x;
 }
 
-int add (int a, int b, int *sum)
+void add (int a, int b, int *sum)
 {
  *sum=a+b;
+
 }
 
 void output(int a, int b, int sum) 

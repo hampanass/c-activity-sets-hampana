@@ -1,0 +1,61 @@
+(base) hampana@Manu-2 set01 % gcc problem04.c                        
+problem04.c:12:13: warning: incompatible pointer types passing 'int **' to parameter of type 'int *'; remove & [-Wincompatible-pointer-types]
+sum=add(a,b,&sum);
+            ^~~~
+problem04.c:3:28: note: passing argument to parameter 'sum' here
+int add(int a, int b, int *sum);
+                           ^
+problem04.c:12:4: warning: incompatible integer to pointer conversion assigning to 'int *' from 'int' [-Wint-conversion]
+sum=add(a,b,&sum);
+   ^~~~~~~~~~~~~~
+problem04.c:13:12: warning: incompatible pointer types passing 'int **' to parameter of type 'int *'; remove & [-Wincompatible-pointer-types]
+output(a,b,&sum);
+           ^~~~
+problem04.c:4:32: note: passing argument to parameter 'sum' here
+void output(int a, int b, int *sum);
+                               ^
+problem04.c:28:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+problem04.c:32:48: warning: format specifies type 'int' but the argument has type 'int **' [-Wformat]
+    printf("the sum of %d and %d is %d", a, b, &sum);
+                                    ~~         ^~~~
+^[[A5 warnings generated.
+(base) hampana@Manu-2 set01 % gcc problem04.c -o problem04
+(base) hampana@Manu-2 set01 % gcc -g -O0 problem04.c -o problem04.exe
+(base) hampana@Manu-2 set01 % lldb ./problem04
+(lldb) target create "./problem04"
+Current executable set to '/Users/hampana/Desktop/c-activity-sets-hampana/set01/problem04' (arm64).
+(lldb) r
+Process 49851 launched: '/Users/hampana/Desktop/c-activity-sets-hampana/set01/problem04' (arm64)
+Enter the value
+2
+Enter the value
+4
+the sum of 2 and 4 is 6Process 49851 exited with status = 0 (0x00000000) 
+(lldb) log enable lldb default -f problem04.log
+(lldb) b main
+Breakpoint 1: where = problem04`main, address = 0x0000000100003e3c
+(lldb) r
+Process 49951 launched: '/Users/hampana/Desktop/c-activity-sets-hampana/set01/problem04' (arm64)
+Process 49951 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100003e3c problem04`main
+problem04`main:
+->  0x100003e3c <+0>:  sub    sp, sp, #0x30
+    0x100003e40 <+4>:  stp    x29, x30, [sp, #0x20]
+    0x100003e44 <+8>:  add    x29, sp, #0x20
+    0x100003e48 <+12>: mov    w8, #0x0
+Target 0: (problem04) stopped.
+(lldb) s
+Process 49951 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
+    frame #0: 0x0000000100003e40 problem04`main + 4
+problem04`main:
+->  0x100003e40 <+4>:  stp    x29, x30, [sp, #0x20]
+    0x100003e44 <+8>:  add    x29, sp, #0x20
+    0x100003e48 <+12>: mov    w8, #0x0
+    0x100003e4c <+16>: str    w8, [sp, #0xc]
+Target 0: (problem04) stopped.
+(lldb) q
+Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] y

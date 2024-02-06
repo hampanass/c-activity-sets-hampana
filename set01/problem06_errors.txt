@@ -1,0 +1,26 @@
+(base) hampana@Manu-2 set01 % gcc problem06.c
+problem06.c:13:20: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'int *'; take the address with & [-Wint-conversion]
+   output(a, b, c, largest);
+                   ^~~~~~~
+                   &
+problem06.c:4:39: note: passing argument to parameter 'largest' here
+void output(int a, int b, int c, int *largest);
+                                      ^
+problem06.c:40:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+problem06.c:44:42: warning: format specifies type 'int' but the argument has type 'int *' [-Wformat]
+    printf("The Largest number is %d\n", largest);
+                                  ~~     ^~~~~~~
+3 warnings generated.
+(base) hampana@Manu-2 set01 % gcc problem06.c -o problem06
+problem06.c:40:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+1 warning generated.
+(base) hampana@Manu-2 set01 % gcc problem06.c -o problem06
+problem06.c:40:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+1 warning generated.
+(base) hampana@Manu-2 set01 % gcc problem06.c -o problem06

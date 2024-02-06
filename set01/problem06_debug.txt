@@ -1,0 +1,102 @@
+(base) hampana@Manu-2 set01 % gcc problem06.c
+problem06.c:13:20: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'int *'; take the address with & [-Wint-conversion]
+   output(a, b, c, largest);
+                   ^~~~~~~
+                   &
+problem06.c:4:39: note: passing argument to parameter 'largest' here
+void output(int a, int b, int c, int *largest);
+                                      ^
+problem06.c:40:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+problem06.c:44:42: warning: format specifies type 'int' but the argument has type 'int *' [-Wformat]
+    printf("The Largest number is %d\n", largest);
+                                  ~~     ^~~~~~~
+3 warnings generated.
+(base) hampana@Manu-2 set01 % gcc problem06.c -o problem06
+problem06.c:40:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+1 warning generated.
+(base) hampana@Manu-2 set01 % gcc problem06.c -o problem06
+problem06.c:40:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+1 warning generated.
+(base) hampana@Manu-2 set01 % gcc problem06.c -o problem06
+(base) hampana@Manu-2 set01 % gcc -g -O0 problem06.c -o problem06.exe
+(base) hampana@Manu-2 set01 % lldb ./problem06
+(lldb) target create "./problem06"
+Current executable set to '/Users/hampana/Desktop/c-activity-sets-hampana/set01/problem06' (arm64).
+(lldb) r
+Process 49011 launched: '/Users/hampana/Desktop/c-activity-sets-hampana/set01/problem06' (arm64)
+Enter the value
+ 1
+Enter the value
+ 2
+Enter the value
+ 3
+The Largest number is 3
+Process 49011 exited with status = 0 (0x00000000) 
+(lldb) log enable lldb deafault -f problem06.log
+error: unrecognized log category 'deafault'
+Logging categories for 'lldb':
+  all - all available logging categories
+  default - default set of logging categories
+  api - log API calls and return values
+  ast - log AST
+  break - log breakpoints
+  commands - log command argument parsing
+  comm - log communication activities
+  conn - log connection details
+  demangle - log mangled names to catch demangler crashes
+  dyld - log shared library related activities
+  event - log broadcaster, listener and event queue activities
+  expr - log expressions
+  formatters - log data formatters related activities
+  host - log host activities
+  jit - log JIT events in the target
+  language - log language runtime events
+  mmap - log mmap related activities
+  module - log module activities such as when modules are created, destroyed, replaced, and more
+  object - log object construction/destruction for important objects
+  os - log OperatingSystem plugin related activities
+  platform - log platform events and activities
+  process - log process events and activities
+  script - log events about the script interpreter
+  state - log private and public process state changes
+  step - log step related activities
+  symbol - log symbol related issues and warnings
+  system-runtime - log system runtime events
+  target - log target events and activities
+  temp - log internal temporary debug messages
+  thread - log thread events and activities
+  types - log type system related activities
+  unwind - log stack unwind activities
+  watch - log watchpoint related activities
+  on-demand - log symbol on-demand related activities
+(lldb) b main
+Breakpoint 1: where = problem06`main, address = 0x0000000100003dc8
+(lldb) r
+Process 49072 launched: '/Users/hampana/Desktop/c-activity-sets-hampana/set01/problem06' (arm64)
+Process 49072 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100003dc8 problem06`main
+problem06`main:
+->  0x100003dc8 <+0>:  sub    sp, sp, #0x20
+    0x100003dcc <+4>:  stp    x29, x30, [sp, #0x10]
+    0x100003dd0 <+8>:  add    x29, sp, #0x10
+    0x100003dd4 <+12>: bl     0x100003f18               ; input
+Target 0: (problem06) stopped.
+(lldb) s
+Process 49072 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
+    frame #0: 0x0000000100003dcc problem06`main + 4
+problem06`main:
+->  0x100003dcc <+4>:  stp    x29, x30, [sp, #0x10]
+    0x100003dd0 <+8>:  add    x29, sp, #0x10
+    0x100003dd4 <+12>: bl     0x100003f18               ; input
+    0x100003dd8 <+16>: stur   w0, [x29, #-0x4]
+Target 0: (problem06) stopped.
+(lldb) q
+Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] y

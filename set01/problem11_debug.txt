@@ -1,0 +1,40 @@
+(base) hampana@Manu-2 c-activity-sets-hampana % cd set01
+(base) hampana@Manu-2 set01 % gcc problem11.c                        
+(base) hampana@Manu-2 set01 % gcc -g -O0 problem11.c -o problem11.exe
+(base) hampana@Manu-2 set01 % gcc problem11.c -o problem11           
+(base) hampana@Manu-2 set01 % lldb ./problem11
+(lldb) target create "./problem11"
+Current executable set to '/Users/hampana/Desktop/c-activity-sets-hampana/set01/problem11' (arm64).
+(lldb) r
+Process 46944 launched: '/Users/hampana/Desktop/c-activity-sets-hampana/set01/problem11' (arm64)
+Enter the real part:1
+Enter the imaginary part:2
+Enter the real part:1
+Enter the imaginary part:2
+Sum is 2.00+i4.00Process 46944 exited with status = 0 (0x00000000) 
+(lldb) log enable lldb default -f problem11.log
+(lldb) b main
+Breakpoint 1: where = problem11`main, address = 0x0000000100003da8
+(lldb) r
+Process 47008 launched: '/Users/hampana/Desktop/c-activity-sets-hampana/set01/problem11' (arm64)
+Process 47008 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100003da8 problem11`main
+problem11`main:
+->  0x100003da8 <+0>:  sub    sp, sp, #0x50
+    0x100003dac <+4>:  stp    x29, x30, [sp, #0x40]
+    0x100003db0 <+8>:  add    x29, sp, #0x40
+    0x100003db4 <+12>: mov    w8, #0x0
+Target 0: (problem11) stopped.
+(lldb) s
+Process 47008 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
+    frame #0: 0x0000000100003dac problem11`main + 4
+problem11`main:
+->  0x100003dac <+4>:  stp    x29, x30, [sp, #0x40]
+    0x100003db0 <+8>:  add    x29, sp, #0x40
+    0x100003db4 <+12>: mov    w8, #0x0
+    0x100003db8 <+16>: str    w8, [sp, #0x4]
+Target 0: (problem11) stopped.
+(lldb) q
+Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] y

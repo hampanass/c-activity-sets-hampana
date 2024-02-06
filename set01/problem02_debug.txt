@@ -1,0 +1,31 @@
+(base) hampana@Manu-2 set01 % gcc problem02.c   
+(base) hampana@Manu-2 set01 % gcc problem02.c -o problem02          
+(base) hampana@Manu-2 set01 % gcc -g -O0 problem02.c -o problem02.exe
+(base) hampana@Manu-2 set01 % lldb ./problem02                       
+(lldb) target create "./problem02"
+Current executable set to '/Users/hampana/Desktop/c-activity-sets-hampana/set01/problem02' (arm64).
+(lldb) b main
+Breakpoint 1: where = problem02`main, address = 0x0000000100003f74
+(lldb) r
+Process 45197 launched: '/Users/hampana/Desktop/c-activity-sets-hampana/set01/problem02' (arm64)
+Process 45197 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100003f74 problem02`main
+problem02`main:
+->  0x100003f74 <+0>:  sub    sp, sp, #0x10
+    0x100003f78 <+4>:  str    wzr, [sp, #0xc]
+    0x100003f7c <+8>:  mov    w8, #0x4
+    0x100003f80 <+12>: str    w8, [sp, #0x8]
+Target 0: (problem02) stopped.
+(lldb) n
+Process 45197 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step over
+    frame #0: 0x0000000100003f78 problem02`main + 4
+problem02`main:
+->  0x100003f78 <+4>:  str    wzr, [sp, #0xc]
+    0x100003f7c <+8>:  mov    w8, #0x4
+    0x100003f80 <+12>: str    w8, [sp, #0x8]
+    0x100003f84 <+16>: mov    w8, #0x3
+Target 0: (problem02) stopped.
+(lldb) q
+Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] y

@@ -1,0 +1,39 @@
+(base) hampana@Manu-2 set01 % gcc problem09.c                        
+(base) hampana@Manu-2 set01 % gcc problem09.c -o problem09         
+(base) hampana@Manu-2 set01 % gcc -g -O0 problem09.c -o problem09.exe
+(base) hampana@Manu-2 set01 % lldb ./problem09
+(lldb) target create "./problem09"
+Current executable set to '/Users/hampana/Desktop/c-activity-sets-hampana/set01/problem09' (arm64).
+(lldb) r
+Process 47854 launched: '/Users/hampana/Desktop/c-activity-sets-hampana/set01/problem09' (arm64)
+enter the number
+25
+the squareroot of 25.000000  is  5.000000Process 47854 exited with status = 0 (0x00000000) 
+(lldb) s
+error: Command requires a process which is currently stopped.
+(lldb) log enable lldb default -f problem09.log
+(lldb) b main
+Breakpoint 1: where = problem09`main, address = 0x0000000100003de8
+(lldb) r
+Process 47939 launched: '/Users/hampana/Desktop/c-activity-sets-hampana/set01/problem09' (arm64)
+Process 47939 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100003de8 problem09`main
+problem09`main:
+->  0x100003de8 <+0>:  sub    sp, sp, #0x20
+    0x100003dec <+4>:  stp    x29, x30, [sp, #0x10]
+    0x100003df0 <+8>:  add    x29, sp, #0x10
+    0x100003df4 <+12>: bl     0x100003f14               ; input
+Target 0: (problem09) stopped.
+(lldb) s
+Process 47939 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
+    frame #0: 0x0000000100003dec problem09`main + 4
+problem09`main:
+->  0x100003dec <+4>:  stp    x29, x30, [sp, #0x10]
+    0x100003df0 <+8>:  add    x29, sp, #0x10
+    0x100003df4 <+12>: bl     0x100003f14               ; input
+    0x100003df8 <+16>: stur   s0, [x29, #-0x4]
+Target 0: (problem09) stopped.
+(lldb) q
+Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] 
