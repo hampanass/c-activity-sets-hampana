@@ -1,0 +1,36 @@
+(base) hampana@Hampana set02 % gcc problem03.c
+(base) hampana@Hampana set02 % gcc problem03.c -o problem03
+(base) hampana@Hampana set02 % gcc -g -O0 problem03.c -o problem03.exe 
+(base) hampana@Hampana set02 % lldb ./problem03
+(lldb) target create "./problem03"
+Current executable set to '/Users/hampana/Desktop/c-activity-sets-hampana/set02/problem03' (arm64).
+(lldb) r
+Process 15195 launched: '/Users/hampana/Desktop/c-activity-sets-hampana/set02/problem03' (arm64)
+Enter the number: 8
+8 is a composite number
+Process 15195 exited with status = 0 (0x00000000) 
+(lldb) log enable lldb default -f problem03.log
+(lldb) b main
+Breakpoint 1: where = problem03`main, address = 0x0000000100003db0
+(lldb) r
+Process 15262 launched: '/Users/hampana/Desktop/c-activity-sets-hampana/set02/problem03' (arm64)
+Process 15262 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100003db0 problem03`main
+problem03`main:
+->  0x100003db0 <+0>:  sub    sp, sp, #0x30
+    0x100003db4 <+4>:  stp    x29, x30, [sp, #0x20]
+    0x100003db8 <+8>:  add    x29, sp, #0x20
+    0x100003dbc <+12>: mov    w8, #0x0
+Target 0: (problem03) stopped.
+(lldb) s
+Process 15262 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
+    frame #0: 0x0000000100003db4 problem03`main + 4
+problem03`main:
+->  0x100003db4 <+4>:  stp    x29, x30, [sp, #0x20]
+    0x100003db8 <+8>:  add    x29, sp, #0x20
+    0x100003dbc <+12>: mov    w8, #0x0
+    0x100003dc0 <+16>: str    w8, [sp, #0xc]
+Target 0: (problem03) stopped.
+(lldb) q
