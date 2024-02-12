@@ -1,0 +1,44 @@
+(base) hampana@Hampana set02 % gcc problem04.c
+(base) hampana@Hampana set02 % gcc problem04.c -o problem04
+(base) hampana@Hampana set02 % gcc -g -O0 problem04.c -o problem04.exe
+(base) hampana@Hampana set02 % lldb ./problem04
+(lldb) target create "./problem04"
+Current executable set to '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem04' (arm64).
+(lldb) r
+Process 28581 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem04' (arm64)
+Enter the array size:
+3
+Enter the values of array:
+2
+Enter the values of array:
+4
+Enter the values of array:
+5
+sum of composite number is  4Process 28581 exited with status = 0 (0x00000000) 
+(lldb) log enabke lldb default -f problem04.log
+invalid command 'log enabke'.
+(lldb) b main
+Breakpoint 1: where = problem04`main, address = 0x0000000100003c74
+(lldb) r
+Process 28630 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem04' (arm64)
+Process 28630 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100003c74 problem04`main
+problem04`main:
+->  0x100003c74 <+0>:  sub    sp, sp, #0x1d0
+    0x100003c78 <+4>:  stp    x28, x27, [sp, #0x1b0]
+    0x100003c7c <+8>:  stp    x29, x30, [sp, #0x1c0]
+    0x100003c80 <+12>: add    x29, sp, #0x1c0
+Target 0: (problem04) stopped.
+(lldb) s
+Process 28630 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
+    frame #0: 0x0000000100003c78 problem04`main + 4
+problem04`main:
+->  0x100003c78 <+4>:  stp    x28, x27, [sp, #0x1b0]
+    0x100003c7c <+8>:  stp    x29, x30, [sp, #0x1c0]
+    0x100003c80 <+12>: add    x29, sp, #0x1c0
+    0x100003c84 <+16>: adrp   x8, 1
+Target 0: (problem04) stopped.
+(lldb) q
+Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] y
