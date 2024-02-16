@@ -16,13 +16,10 @@ return 0;
 
 int input ()
 {
-int a,b;
-printf("Enter the value\n");
-scanf("%d", &a);
-return a;
-printf("Enter the value\n");
-scanf("%d", &a);
-return b;
+ int x;
+ printf("Enter the values:");
+ scanf("%d",&x);
+ return x;
 }
 
 int add (int a, int b, int sum)

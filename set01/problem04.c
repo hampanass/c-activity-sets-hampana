@@ -1,5 +1,5 @@
 #include <stdio.h>
-int input();
+void input(int *a,int *b);
 void add(int a, int b, int *sum);
 void output(int a, int b, int sum);
 
@@ -7,19 +7,16 @@ void output(int a, int b, int sum);
 int main()
 {
 int a, b, sum;
-a=input();
-b=input();
+input(&a,&b);
 add(a,b,&sum);
 output(a,b, sum);
 return 0;
 }
 
-int input ()
+void input (int *a, int *b)
 {
-int x;
 printf("Enter the value\n");
-scanf("%d", &x);
-return x;
+scanf("%d %d", a,b);
 }
 
 void add (int a, int b, int *sum)
