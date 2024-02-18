@@ -1,0 +1,19 @@
+base) hampana@Hampana set02 % gcc problem05.c
+problem05.c:4:9: error: call to undeclared function 'input'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    a = input();
+        ^
+problem05.c:6:11: error: call to undeclared function 'find_gcd'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    gcd = find_gcd(a,b);     
+          ^
+problem05.c:7:5: error: call to undeclared function 'output'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    output(a,b,gcd);
+    ^
+problem05.c:26:6: error: conflicting types for 'output'
+void output(int a, int b, int gcd) {
+     ^
+problem05.c:7:5: note: previous implicit declaration is here
+    output(a,b,gcd);
+    ^
+4 errors generated.
+(base) hampana@Hampana set02 % gcc problem05.c
+(base) hampana@Hampana set02 % gcc problem05.c -o problem05
