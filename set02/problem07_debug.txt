@@ -1,0 +1,188 @@
+(base) hampana@Hampana set02 % gcc problem07.c
+(base) hampana@Hampana set02 % gcc problem07.c -o problem07
+(base) hampana@Hampana set02 % gcc -g -O0 problem07.c -o problem07
+(base) hampana@Hampana set02 % lldb ./problem07
+(lldb) target create "./problem07"
+Current executable set to '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem07' (arm64).
+(lldb) r
+Process 73797 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem07' (arm64)
+Enter the base of the triangle: 3
+Enter the altitude of the triangle: 2
+The area of the triangle is 3.00
+Process 73797 exited with status = 0 (0x00000000) 
+(lldb) log enable lldb default -f problem07.log
+(lldb) b main
+Breakpoint 1: where = problem07`main + 24 at problem07.c:29:18, address = 0x0000000100003ee4
+(lldb) r
+Process 73843 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem07' (arm64)
+Process 73843 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100003ee4 problem07`main at problem07.c:29:18
+   26  
+   27   int main()
+   28   {
+-> 29       Triangle t = input_triangle();
+   30       find_area(&t);
+   31       output(t);
+   32       return 0;
+Target 0: (problem07) stopped.
+(lldb) s
+Process 73843 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step in
+    frame #0: 0x0000000100003dec problem07`input_triangle at problem07.c:10:5
+   7    Triangle input_triangle()
+   8    {
+   9        Triangle t;
+-> 10       printf("Enter the base of the triangle: ");
+   11       scanf("%f", &t.base);
+   12       printf("Enter the altitude of the triangle: ");
+   13       scanf("%f", &t.altitude);
+Target 0: (problem07) stopped.
+(lldb) s
+Process 73843 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step in
+    frame #0: 0x0000000100003df0 problem07`input_triangle at problem07.c:11:5
+   8    {
+   9        Triangle t;
+   10       printf("Enter the base of the triangle: ");
+-> 11       scanf("%f", &t.base);
+   12       printf("Enter the altitude of the triangle: ");
+   13       scanf("%f", &t.altitude);
+   14       return t;
+Target 0: (problem07) stopped.
+(lldb) s
+Enter the base of the triangle: 3
+Process 73843 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step in
+    frame #0: 0x0000000100003e18 problem07`input_triangle at problem07.c:12:5
+   9        Triangle t;
+   10       printf("Enter the base of the triangle: ");
+   11       scanf("%f", &t.base);
+-> 12       printf("Enter the altitude of the triangle: ");
+   13       scanf("%f", &t.altitude);
+   14       return t;
+   15   }
+Target 0: (problem07) stopped.
+(lldb) s
+Process 73843 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step in
+    frame #0: 0x0000000100003e24 problem07`input_triangle at problem07.c:13:20
+   10       printf("Enter the base of the triangle: ");
+   11       scanf("%f", &t.base);
+   12       printf("Enter the altitude of the triangle: ");
+-> 13       scanf("%f", &t.altitude);
+   14       return t;
+   15   }
+   16  
+Target 0: (problem07) stopped.
+(lldb) s
+Enter the altitude of the triangle: 2
+Process 73843 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step in
+    frame #0: 0x0000000100003e34 problem07`input_triangle at problem07.c:14:5
+   11       scanf("%f", &t.base);
+   12       printf("Enter the altitude of the triangle: ");
+   13       scanf("%f", &t.altitude);
+-> 14       return t;
+   15   }
+   16  
+   17   void find_area(Triangle *t)
+Target 0: (problem07) stopped.
+(lldb) s
+Process 73843 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step in
+    frame #0: 0x0000000100003ee8 problem07`main at problem07.c:29:18
+   26  
+   27   int main()
+   28   {
+-> 29       Triangle t = input_triangle();
+   30       find_area(&t);
+   31       output(t);
+   32       return 0;
+Target 0: (problem07) stopped.
+(lldb) s
+Process 73843 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step in
+    frame #0: 0x0000000100003ef8 problem07`main at problem07.c:30:5
+   27   int main()
+   28   {
+   29       Triangle t = input_triangle();
+-> 30       find_area(&t);
+   31       output(t);
+   32       return 0;
+   33   }
+Target 0: (problem07) stopped.
+(lldb) s
+Process 73843 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step in
+    frame #0: 0x0000000100003e54 problem07`find_area(t=0x000000016fdff050) at problem07.c:19:21
+   16  
+   17   void find_area(Triangle *t)
+   18   {
+-> 19       t->area = 0.5 * t->base * t->altitude;
+   20   }
+   21  
+   22   void output(Triangle t)
+Target 0: (problem07) stopped.
+(lldb) s
+Process 73843 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step in
+    frame #0: 0x0000000100003e84 problem07`find_area(t=0x000000016fdff050) at problem07.c:20:1
+   17   void find_area(Triangle *t)
+   18   {
+   19       t->area = 0.5 * t->base * t->altitude;
+-> 20   }
+   21  
+   22   void output(Triangle t)
+   23   {
+Target 0: (problem07) stopped.
+(lldb) s
+Process 73843 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step in
+    frame #0: 0x0000000100003efc problem07`main at problem07.c:31:5
+   28   {
+   29       Triangle t = input_triangle();
+   30       find_area(&t);
+-> 31       output(t);
+   32       return 0;
+   33   }
+Target 0: (problem07) stopped.
+(lldb) s
+Process 73843 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step in
+    frame #0: 0x0000000100003ea4 problem07`output(t=(base = 3, altitude = 2, area = 3)) at problem07.c:24:52
+   21  
+   22   void output(Triangle t)
+   23   {
+-> 24       printf("The area of the triangle is %.2f\n", t.area);
+   25   }
+   26  
+   27   int main()
+Target 0: (problem07) stopped.
+(lldb) s
+The area of the triangle is 3.00
+Process 73843 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step in
+    frame #0: 0x0000000100003ec0 problem07`output(t=(base = 3, altitude = 2, area = 3)) at problem07.c:25:1
+   22   void output(Triangle t)
+   23   {
+   24       printf("The area of the triangle is %.2f\n", t.area);
+-> 25   }
+   26  
+   27   int main()
+   28   {
+Target 0: (problem07) stopped.
+(lldb) s
+Process 73843 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = step in
+    frame #0: 0x0000000100003f0c problem07`main at problem07.c:31:5
+   28   {
+   29       Triangle t = input_triangle();
+   30       find_area(&t);
+-> 31       output(t);
+   32       return 0;
+   33   }
+Target 0: (problem07) stopped.
+(lldb) q
+Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] y
+(base) hampana@Hampana set02 % 
