@@ -1,0 +1,10 @@
+(base) hampana@Hampana set03 % gcc problem01.c
+problem01.c:31:32: error: too few arguments to function call, expected 2, have 1
+    distance = sqrt(pow(x2-x1/2) + pow(y2-y1/2));
+                    ~~~        ^
+problem01.c:31:47: error: too few arguments to function call, expected 2, have 1
+    distance = sqrt(pow(x2-x1/2) + pow(y2-y1/2));
+                                   ~~~        ^
+2 errors generated.
+(base) hampana@Hampana set03 % gcc problem01.c -o problem01
+(base) hampana@Hampana set03 % gcc -g -O0 problem01.c -o problem01.exe
