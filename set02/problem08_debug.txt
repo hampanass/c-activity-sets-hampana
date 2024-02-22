@@ -1,76 +1,3 @@
-(base) hampana@Hampana set02 % gcc problem06.c
-(base) hampana@Hampana set02 % gcc problem05.c -o problem05
-(base) hampana@Hampana set02 % gcc problem06.c -o problem06
-(base) hampana@Hampana set02 % gcc -g -O0 problem06.c -o problem06.exe
-(base) hampana@Hampana set02 % lldb ./problem06
-(lldb) target create "./problem06"
-Current executable set to '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem06' (arm64).
-(lldb) r
-Process 66260 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem06' (arm64)
-Enter a string: hello
-The string which is to be reversed:hello
-Reversed string: olleh
-Process 66260 exited with status = 0 (0x00000000) 
-(lldb) log enable lldb default -f problem06.log
-(lldb) b main
-Breakpoint 1: where = problem06`main, address = 0x0000000100003d6c
-(lldb) r
-Process 66296 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem06' (arm64)
-Process 66296 stopped
-* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
-    frame #0: 0x0000000100003d6c problem06`main
-problem06`main:
-->  0x100003d6c <+0>:  sub    sp, sp, #0x110
-    0x100003d70 <+4>:  stp    x28, x27, [sp, #0xf0]
-    0x100003d74 <+8>:  stp    x29, x30, [sp, #0x100]
-    0x100003d78 <+12>: add    x29, sp, #0x100
-Target 0: (problem06) stopped.
-(lldb) s
-Process 66296 stopped
-* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
-    frame #0: 0x0000000100003d70 problem06`main + 4
-problem06`main:
-->  0x100003d70 <+4>:  stp    x28, x27, [sp, #0xf0]
-    0x100003d74 <+8>:  stp    x29, x30, [sp, #0x100]
-    0x100003d78 <+12>: add    x29, sp, #0x100
-    0x100003d7c <+16>: adrp   x8, 1
-Target 0: (problem06) stopped.
-(lldb) q
-Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] y
-(base) hampana@Hampana set02 % git add .
-(base) hampana@Hampana set02 % git commit -m "test"
-[main bde2c56] test
- Committer: Asha <hampana@Hampana.local>
-Your name and email address were configured automatically based
-on your username and hostname. Please check that they are accurate.
-You can suppress this message by setting them explicitly. Run the
-following command and follow the instructions in your editor to edit
-your configuration file:
-
-    git config --global --edit
-
-After doing this, you may fix the identity used for this commit with:
-
-    git commit --amend --reset-author
-
- 6 files changed, 1023 insertions(+), 10 deletions(-)
- create mode 100755 set02/problem06
- create mode 100644 set02/problem06.log
- create mode 100644 set02/problem06_debug.txt
- create mode 100644 set02/problem06_errors.txt
-(base) hampana@Hampana set02 % git push
-Enumerating objects: 13, done.
-Counting objects: 100% (13/13), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (9/9), done.
-Writing objects: 100% (9/9), 13.68 KiB | 13.68 MiB/s, done.
-Total 9 (delta 3), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
-To https://github.com/hampanass/c-activity-sets-hampana.git
-   c5a6bc2..bde2c56  main -> main
-(base) hampana@Hampana set02 % 
- *  History restored 
-
 (base) hampana@Hampana set02 % gcc problem08.c                        
 (base) hampana@Hampana set02 % gcc problem08.c -o problem08          
 (base) hampana@Hampana set02 % gcc -g -O0 problem08.c -o problem08.exe
@@ -78,17 +5,17 @@ To https://github.com/hampanass/c-activity-sets-hampana.git
 (lldb) target create "./problem08"
 Current executable set to '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem08' (arm64).
 (lldb) r
-Process 74323 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem08' (arm64)
+Process 82838 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem08' (arm64)
 Enter the base of the triangle: 2
-Enter the altitude of the triangle: 3
-The area of the triangle is 3.00
-Process 74323 exited with status = 0 (0x00000000) 
+Enter the altitude of the triangle: 5
+The area of the triangle is 5.00
+Process 82838 exited with status = 0 (0x00000000) 
 (lldb) log enable lldb default -f problem08.log
 (lldb) b main
 Breakpoint 1: where = problem08`main, address = 0x0000000100003ecc
 (lldb) r
-Process 74385 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem08' (arm64)
-Process 74385 stopped
+Process 82869 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem08' (arm64)
+Process 82869 stopped
 * thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
     frame #0: 0x0000000100003ecc problem08`main
 problem08`main:
@@ -98,7 +25,7 @@ problem08`main:
     0x100003ed8 <+12>: mov    w8, #0x0
 Target 0: (problem08) stopped.
 (lldb) s
-Process 74385 stopped
+Process 82869 stopped
 * thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
     frame #0: 0x0000000100003ed0 problem08`main + 4
 problem08`main:
@@ -108,7 +35,7 @@ problem08`main:
     0x100003edc <+16>: str    w8, [sp, #0xc]
 Target 0: (problem08) stopped.
 (lldb) s
-Process 74385 stopped
+Process 82869 stopped
 * thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
     frame #0: 0x0000000100003ed4 problem08`main + 8
 problem08`main:
@@ -116,66 +43,6 @@ problem08`main:
     0x100003ed8 <+12>: mov    w8, #0x0
     0x100003edc <+16>: str    w8, [sp, #0xc]
     0x100003ee0 <+20>: stur   wzr, [x29, #-0x4]
-Target 0: (problem08) stopped.
-(lldb) s
-Process 74385 stopped
-* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
-    frame #0: 0x0000000100003ed8 problem08`main + 12
-problem08`main:
-->  0x100003ed8 <+12>: mov    w8, #0x0
-    0x100003edc <+16>: str    w8, [sp, #0xc]
-    0x100003ee0 <+20>: stur   wzr, [x29, #-0x4]
-    0x100003ee4 <+24>: bl     0x100003dd8               ; input_triangle
-Target 0: (problem08) stopped.
-(lldb) s
-Process 74385 stopped
-* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
-    frame #0: 0x0000000100003edc problem08`main + 16
-problem08`main:
-->  0x100003edc <+16>: str    w8, [sp, #0xc]
-    0x100003ee0 <+20>: stur   wzr, [x29, #-0x4]
-    0x100003ee4 <+24>: bl     0x100003dd8               ; input_triangle
-    0x100003ee8 <+28>: add    x0, sp, #0x10
-Target 0: (problem08) stopped.
-(lldb) s
-Process 74385 stopped
-* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
-    frame #0: 0x0000000100003ee0 problem08`main + 20
-problem08`main:
-->  0x100003ee0 <+20>: stur   wzr, [x29, #-0x4]
-    0x100003ee4 <+24>: bl     0x100003dd8               ; input_triangle
-    0x100003ee8 <+28>: add    x0, sp, #0x10
-    0x100003eec <+32>: str    s0, [sp, #0x10]
-Target 0: (problem08) stopped.
-(lldb) s
-Process 74385 stopped
-* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
-    frame #0: 0x0000000100003ee4 problem08`main + 24
-problem08`main:
-->  0x100003ee4 <+24>: bl     0x100003dd8               ; input_triangle
-    0x100003ee8 <+28>: add    x0, sp, #0x10
-    0x100003eec <+32>: str    s0, [sp, #0x10]
-    0x100003ef0 <+36>: str    s1, [sp, #0x14]
-Target 0: (problem08) stopped.
-(lldb) s
-Process 74385 stopped
-* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
-    frame #0: 0x0000000100003dd8 problem08`input_triangle
-problem08`input_triangle:
-->  0x100003dd8 <+0>:  sub    sp, sp, #0x40
-    0x100003ddc <+4>:  stp    x29, x30, [sp, #0x30]
-    0x100003de0 <+8>:  add    x29, sp, #0x30
-    0x100003de4 <+12>: adrp   x0, 0
-Target 0: (problem08) stopped.
-(lldb) 
-Process 74385 stopped
-* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
-    frame #0: 0x0000000100003ddc problem08`input_triangle + 4
-problem08`input_triangle:
-->  0x100003ddc <+4>:  stp    x29, x30, [sp, #0x30]
-    0x100003de0 <+8>:  add    x29, sp, #0x30
-    0x100003de4 <+12>: adrp   x0, 0
-    0x100003de8 <+16>: add    x0, x0, #0xf34            ; "Enter the base of the triangle: "
 Target 0: (problem08) stopped.
 (lldb) q
 Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] y

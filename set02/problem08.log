@@ -8,7 +8,7 @@
  HandleCommand, (revised) command_string: 'breakpoint set --name 'main''
  HandleCommand, wants_raw_input:'False'
  HandleCommand, command line after removing command name(s): '--name 'main''
- 0x130e42968 Broadcaster("lldb.target")::BroadcastEvent (event_sp = {0x13220c308 Event: broadcaster = 0x131a28000 (lldb.target), type = 0x00000001 (breakpoint-changed), data = {bkpt: 1 type: breakpoint added}}, unique =0) hijack = 0x0
+ 0x14070b418 Broadcaster("lldb.target")::BroadcastEvent (event_sp = {0x1306042b8 Event: broadcaster = 0x14195a600 (lldb.target), type = 0x00000001 (breakpoint-changed), data = {bkpt: 1 type: breakpoint added}}, unique =0) hijack = 0x0
  Target::AddBreakpoint (internal = no) => break_id = 1: name = 'main'
 
 
@@ -52,22 +52,22 @@
 
  Target::ClearAllWatchpointHistoricValues
 
- Host::StartMonitoringChildProcess(callback, pid=74384) source = 0x120e06150
+ Host::StartMonitoringChildProcess(callback, pid=82868) source = 0x142108900
 
- ::waitpid (pid = 74384, &status, 0) => pid = 74384, status = 0x00000000 (EXITED), signal = 0, exit_status = 0
- Host::StartMonitoringChildProcess(callback, pid=74385) source = 0x140e297c0
+ ::waitpid (pid = 82868, &status, 0) => pid = 82868, status = 0x00000000 (EXITED), signal = 0, exit_status = 0
+ Host::StartMonitoringChildProcess(callback, pid=82869) source = 0x1506e6280
 
  (plugin = gdb-remote, state = attaching, restarted = 0)
- Host::StartMonitoringChildProcess(callback, pid=74386) source = 0x140e2dbd0
+ Host::StartMonitoringChildProcess(callback, pid=82870) source = 0x142436f90
 
  thread created
- Process::AttachCompletionHandler::AttachCompletionHandler process=0x14104f800, exec_count=0
+ Process::AttachCompletionHandler::AttachCompletionHandler process=0x14180e400, exec_count=0
  Process::ControlPrivateStateThread (signal = 4)
  Sending control event of type: 4.
  thread created
- Process::RunPrivateStateThread (arg = 0x14104f800, pid = 74385) thread starting...
+ Process::RunPrivateStateThread (arg = 0x14180e400, pid = 82869) thread starting...
  timeout = <infinite>, event_sp)...
- Process::RunPrivateStateThread (arg = 0x14104f800, pid = 74385) got a control event: 4
+ Process::RunPrivateStateThread (arg = 0x14180e400, pid = 82869) got a control event: 4
  timeout = <infinite>, event_sp)...
  thread created
  timeout = <infinite>
@@ -75,8 +75,8 @@
  (plugin = gdb-remote, state = stopped)
  (plugin = gdb-remote, state = stopped, stop_id = 1
  Process::AttachCompletionHandler::PerformAction called with state stopped (5)
- Discarding thread plans for thread (tid = 0x1cf227, force 1)
- Thread::PushPlan(0x0x132145868): "Base thread plan.", tid = 0x1cf227.
+ Discarding thread plans for thread (tid = 0x201c27, force 1)
+ Thread::PushPlan(0x0x14071e478): "Base thread plan.", tid = 0x201c27.
  Process::AttachCompletionHandler::PerformAction state stopped: no more execs expected to start, continuing with attach
  Process::CompleteAttach()
  Setting Process code address mask to 0xffff800000000000
@@ -131,7 +131,7 @@
  DynamicLoaderDarwin::UnloadAllImages[42] F9B004FE-F1D6-307E-B399-568B8AC0CB6F (arm64e) "/usr/lib/libc++.1.dylib"
  Breakpoint::ModulesChanged: num_modules: 43 load: 0 delete_locations: 0
 
- 0x130e42968 Broadcaster("lldb.target")::BroadcastEvent (event_sp = {0x1321428d8 Event: broadcaster = 0x131a28000 (lldb.target), type = 0x00000001 (breakpoint-changed), data = {bkpt: 1 type: locations removed}}, unique =0) hijack = 0x0
+ 0x14070b418 Broadcaster("lldb.target")::BroadcastEvent (event_sp = {0x1506e8878 Event: broadcaster = 0x14195a600 (lldb.target), type = 0x00000001 (breakpoint-changed), data = {bkpt: 1 type: locations removed}}, unique =0) hijack = 0x0
  Initial module fetch:  Adding 2 modules.
 
  Found executable module: /Users/hampana/Documents/c-activity-sets-hampana/set02/problem08
@@ -154,7 +154,7 @@
  Breakpoint::ModulesChanged: num_modules: 2 load: 1 delete_locations: 0
 
  GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() add at addr = 0x100003ecc
- 0x130e42968 Broadcaster("lldb.target")::BroadcastEvent (event_sp = {0x132156518 Event: broadcaster = 0x131a28000 (lldb.target), type = 0x00000001 (breakpoint-changed), data = {bkpt: 1 type: locations resolved}}, unique =0) hijack = 0x0
+ 0x14070b418 Broadcaster("lldb.target")::BroadcastEvent (event_sp = {0x140766948 Event: broadcaster = 0x14195a600 (lldb.target), type = 0x00000001 (breakpoint-changed), data = {bkpt: 1 type: locations resolved}}, unique =0) hijack = 0x0
  Target::AddBreakpoint (internal = yes) => break_id = -4: name = 'lldb_image_notifier', module = dyld
 
 
@@ -162,41 +162,41 @@
  after DynamicLoader::DidAttach(), target executable is /Users/hampana/Documents/c-activity-sets-hampana/set02/problem08 (using macos-dyld plugin)
  after SystemRuntime::DidAttach(), target executable is /Users/hampana/Documents/c-activity-sets-hampana/set02/problem08 (using systemruntime-macosx plugin)
  Ran next event action, result was 0.
- 0x132145868: tid = 0x1cf227: stop info = <NULL> (stop_id = 1)
- 0x132145868: tid = 0x1cf227: stop info = signal SIGSTOP (stop_id = 1)
+ 0x14071e478: tid = 0x201c27: stop info = <NULL> (stop_id = 1)
+ 0x14071e478: tid = 0x201c27: stop info = signal SIGSTOP (stop_id = 1)
  
  ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
- Thread::ShouldStop(0x132145868) for tid = 0x1cf227 0x1cf227, pc = 0x0000000100010b70
+ Thread::ShouldStop(0x14071e478) for tid = 0x201c27 0x201c27, pc = 0x0000000100010b70
  ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
  Plan stack initial state:
-  thread #1: tid = 0x1cf227:
+  thread #1: tid = 0x201c27:
     Active plan stack:
       Element 0: Base thread plan.
 
- Base plan discarding thread plans for thread tid = 0x1cf227 (signal: signal SIGSTOP)
- Discarding thread plans for thread (tid = 0x1cf227, force 0)
+ Base plan discarding thread plans for thread tid = 0x201c27 (signal: signal SIGSTOP)
+ Discarding thread plans for thread (tid = 0x201c27, force 0)
  Base plan says should stop: 1.
  Plan stack final state:
-  thread #1: tid = 0x1cf227:
+  thread #1: tid = 0x201c27:
     Active plan stack:
       Element 0: Base thread plan.
 
  vvvvvvvv Thread::ShouldStop End (returning 1) vvvvvvvv
  ThreadList::ShouldStop overall should_stop = 1
- Process::ShouldBroadcastEvent (0x132137d10) => new state: stopped, last broadcast state: stopped - YES
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state stopped (old state stopped) to hijacked
+ Process::ShouldBroadcastEvent (0x1506f9c10) => new state: stopped, last broadcast state: stopped - YES
+ Process::HandlePrivateEvent (pid = 82869) broadcasting new state stopped (old state stopped) to hijacked
  timeout = <infinite>, event_sp)...
  (plugin = gdb-remote, state = stopped, restarted = 0)
  (plugin = gdb-remote, state = stopped) -- unlocking run lock
  timeout = <infinite>, event_sp) => stopped
  (plugin = gdb-remote) -- locking run lock
  Process::PrivateResume() m_stop_id = 1, public state: stopped private state: stopped
- WillResume Thread #1 (0x0x132145868): tid = 0x1cf227, pc = 0x100010b70, sp = 0x16fdff298, fp = 0x00000000, plan = 'base plan', state = running, stop others = 0
+ WillResume Thread #1 (0x0x14071e478): tid = 0x201c27, pc = 0x100010b70, sp = 0x16fdff2a0, fp = 0x00000000, plan = 'base plan', state = running, stop others = 0
  (plugin = gdb-remote, state = running)
  Process thinks the process has resumed.
- Current Plan for thread 1(0x132145868) (0x1cf227, running): base plan being asked whether we should report run.
- Process::ShouldBroadcastEvent (0x140e31ef0) => new state: running, last broadcast state: running - YES
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state running (old state running) to public
+ Current Plan for thread 1(0x14071e478) (0x201c27, running): base plan being asked whether we should report run.
+ Process::ShouldBroadcastEvent (0x142446240) => new state: running, last broadcast state: running - YES
+ Process::HandlePrivateEvent (pid = 82869) broadcasting new state running (old state running) to public
  Process::PushProcessIOHandler pushing IO handler
  Process::HandlePrivateEvent updated m_iohandler_sync to 1
  timeout = <infinite>, event_sp)...
@@ -206,14 +206,14 @@
  Went to stop the private state thread, but it was already invalid.
  (plugin = gdb-remote, state = stopped)
  (plugin = gdb-remote, state = stopped, stop_id = 2
- 0x132145868: tid = 0x1cf227: stop info = <NULL> (stop_id = 2)
- 0x132145868: tid = 0x1cf227: stop info = shared-library-event (stop_id = 2)
+ 0x14071e478: tid = 0x201c27: stop info = <NULL> (stop_id = 2)
+ 0x14071e478: tid = 0x201c27: stop info = shared-library-event (stop_id = 2)
  
  ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
- Thread::ShouldStop(0x132145868) for tid = 0x1cf227 0x1cf227, pc = 0x0000000100057414
+ Thread::ShouldStop(0x14071e478) for tid = 0x201c27 0x201c27, pc = 0x0000000100057414
  ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
  Plan stack initial state:
-  thread #1: tid = 0x1cf227:
+  thread #1: tid = 0x201c27:
     Active plan stack:
       Element 0: Base thread plan.
 
@@ -227,7 +227,7 @@
  Breakpoint::ModulesChanged: num_modules: 1 load: 0 delete_locations: 0
 
  GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() remove at addr = 0x100003ecc
- 0x130e42968 Broadcaster("lldb.target")::BroadcastEvent (event_sp = {0x132156068 Event: broadcaster = 0x131a28000 (lldb.target), type = 0x00000001 (breakpoint-changed), data = {bkpt: 1 type: locations removed}}, unique =0) hijack = 0x0
+ 0x14070b418 Broadcaster("lldb.target")::BroadcastEvent (event_sp = {0x140781dc8 Event: broadcaster = 0x14195a600 (lldb.target), type = 0x00000001 (breakpoint-changed), data = {bkpt: 1 type: locations removed}}, unique =0) hijack = 0x0
  Target::AddBreakpoint (internal = yes) => break_id = -5: address = 0x0000000189f4a414
 
 
@@ -244,30 +244,30 @@
  StopInfo::ShouldStop async callback says we should not stop, returning ShouldStop of false.
  ThreadList::ShouldStop overall should_stop = 0
  ThreadList::ShouldReportStop 1 threads
- Thread::ShouldReportStop() tid = 0x1cf227: returning vote 0 for current plan
+ Thread::ShouldReportStop() tid = 0x201c27: returning vote 0 for current plan
  Returning no opinion
  Process::ShouldBroadcastEvent: should_resume: 1 state: stopped was_restarted: 0 report_stop_vote: 0.
- Process::ShouldBroadcastEvent (0x14200aae0) Restarting process from state: stopped
+ Process::ShouldBroadcastEvent (0x15068ed10) Restarting process from state: stopped
  Process::PrivateResume() m_stop_id = 2, public state: running private state: stopped
- WillResume Thread #1 (0x0x132145868): tid = 0x1cf227, pc = 0x100057414, sp = 0x16fdff000, fp = 0x16fdff050, plan = 'base plan', state = running, stop others = 0
+ WillResume Thread #1 (0x0x14071e478): tid = 0x201c27, pc = 0x100057414, sp = 0x16fdff010, fp = 0x16fdff060, plan = 'base plan', state = running, stop others = 0
  (plugin = gdb-remote, state = running)
  Process thinks the process has resumed.
- Process::ShouldBroadcastEvent (0x14200aae0) => new state: stopped, last broadcast state: running - NO
- Process::HandlePrivateEvent (pid = 74385) suppressing state stopped (old state running): should_broadcast == false
+ Process::ShouldBroadcastEvent (0x15068ed10) => new state: stopped, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 82869) suppressing state stopped (old state running): should_broadcast == false
  timeout = <infinite>, event_sp)...
- Process::ShouldBroadcastEvent (0x140e0abf0) => new state: running, last broadcast state: running - NO
- Process::HandlePrivateEvent (pid = 74385) suppressing state running (old state running): should_broadcast == false
+ Process::ShouldBroadcastEvent (0x15068e780) => new state: running, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 82869) suppressing state running (old state running): should_broadcast == false
  timeout = <infinite>, event_sp)...
  (plugin = gdb-remote, state = stopped)
  (plugin = gdb-remote, state = stopped, stop_id = 3
- 0x132145868: tid = 0x1cf227: stop info = <NULL> (stop_id = 3)
- 0x132145868: tid = 0x1cf227: stop info =  (stop_id = 3)
+ 0x14071e478: tid = 0x201c27: stop info = <NULL> (stop_id = 3)
+ 0x14071e478: tid = 0x201c27: stop info =  (stop_id = 3)
  
  ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
- Thread::ShouldStop(0x132145868) for tid = 0x1cf227 0x1cf227, pc = 0x0000000189f4a414
+ Thread::ShouldStop(0x14071e478) for tid = 0x201c27 0x201c27, pc = 0x0000000189f4a414
  ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
  Plan stack initial state:
-  thread #1: tid = 0x1cf227:
+  thread #1: tid = 0x201c27:
     Active plan stack:
       Element 0: Base thread plan.
 
@@ -298,7 +298,7 @@
  Breakpoint::ModulesChanged: num_modules: 2 load: 1 delete_locations: 0
 
  GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() add at addr = 0x100003ecc
- 0x130e42968 Broadcaster("lldb.target")::BroadcastEvent (event_sp = {0x13213cd48 Event: broadcaster = 0x131a28000 (lldb.target), type = 0x00000001 (breakpoint-changed), data = {bkpt: 1 type: locations resolved}}, unique =0) hijack = 0x0
+ 0x14070b418 Broadcaster("lldb.target")::BroadcastEvent (event_sp = {0x1506e6238 Event: broadcaster = 0x14195a600 (lldb.target), type = 0x00000001 (breakpoint-changed), data = {bkpt: 1 type: locations resolved}}, unique =0) hijack = 0x0
  Target::AddBreakpoint (internal = yes) => break_id = -6: name = 'lldb_image_notifier', module = dyld
 
 
@@ -313,32 +313,32 @@
  StopInfo::ShouldStop async callback says we should not stop, returning ShouldStop of false.
  ThreadList::ShouldStop overall should_stop = 0
  ThreadList::ShouldReportStop 1 threads
- Thread::ShouldReportStop() tid = 0x1cf227: returning vote 0 for current plan
+ Thread::ShouldReportStop() tid = 0x201c27: returning vote 0 for current plan
  Returning no opinion
  Process::ShouldBroadcastEvent: should_resume: 1 state: stopped was_restarted: 0 report_stop_vote: 0.
- Process::ShouldBroadcastEvent (0x140e0abf0) Restarting process from state: stopped
+ Process::ShouldBroadcastEvent (0x15068e780) Restarting process from state: stopped
  Process::PrivateResume() m_stop_id = 3, public state: running private state: stopped
- Thread::PushPlan(0x0x132145868): "Single stepping past breakpoint site 9 at 0x189f4a414", tid = 0x1cf227.
- WillResume Thread #1 (0x0x132145868): tid = 0x1cf227, pc = 0x189f4a414, sp = 0x16fdfeef0, fp = 0x16fdff050, plan = 'Step over breakpoint trap', state = stepping, stop others = 1
+ Thread::PushPlan(0x0x14071e478): "Single stepping past breakpoint site 9 at 0x189f4a414", tid = 0x201c27.
+ WillResume Thread #1 (0x0x14071e478): tid = 0x201c27, pc = 0x189f4a414, sp = 0x16fdfef00, fp = 0x16fdff060, plan = 'Step over breakpoint trap', state = stepping, stop others = 1
  GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() remove at addr = 0x189f4a414
  (plugin = gdb-remote, state = running)
  Process thinks the process has resumed.
- Process::ShouldBroadcastEvent (0x140e0abf0) => new state: stopped, last broadcast state: running - NO
- Process::HandlePrivateEvent (pid = 74385) suppressing state stopped (old state running): should_broadcast == false
+ Process::ShouldBroadcastEvent (0x15068e780) => new state: stopped, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 82869) suppressing state stopped (old state running): should_broadcast == false
  timeout = <infinite>, event_sp)...
- Process::ShouldBroadcastEvent (0x140e52240) => new state: running, last broadcast state: running - NO
- Process::HandlePrivateEvent (pid = 74385) suppressing state running (old state running): should_broadcast == false
+ Process::ShouldBroadcastEvent (0x142435de0) => new state: running, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 82869) suppressing state running (old state running): should_broadcast == false
  timeout = <infinite>, event_sp)...
  (plugin = gdb-remote, state = stopped)
  (plugin = gdb-remote, state = stopped, stop_id = 4
- 0x132145868: tid = 0x1cf227: stop info = <NULL> (stop_id = 4)
- 0x132145868: tid = 0x1cf227: stop info = trace (stop_id = 4)
+ 0x14071e478: tid = 0x201c27: stop info = <NULL> (stop_id = 4)
+ 0x14071e478: tid = 0x201c27: stop info = trace (stop_id = 4)
  
  ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
- Thread::ShouldStop(0x132145868) for tid = 0x1cf227 0x1cf227, pc = 0x0000000189f4a418
+ Thread::ShouldStop(0x14071e478) for tid = 0x201c27 0x201c27, pc = 0x0000000189f4a418
  ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
  Plan stack initial state:
-  thread #1: tid = 0x1cf227:
+  thread #1: tid = 0x201c27:
     Active plan stack:
       Element 0: Base thread plan.
       Element 1: Single stepping past breakpoint site 9 at 0x189f4a414
@@ -348,9 +348,9 @@
  Completed step over breakpoint plan.
  GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() add at addr = 0x189f4a414
  Plan Step over breakpoint trap auto-continue: true.
- Popping plan: "Step over breakpoint trap", tid = 0x1cf227.
+ Popping plan: "Step over breakpoint trap", tid = 0x201c27.
  Plan stack final state:
-  thread #1: tid = 0x1cf227:
+  thread #1: tid = 0x201c27:
     Active plan stack:
       Element 0: Base thread plan.
     Completed plan stack:
@@ -359,31 +359,31 @@
  vvvvvvvv Thread::ShouldStop End (returning 0) vvvvvvvv
  ThreadList::ShouldStop overall should_stop = 0
  ThreadList::ShouldReportStop 1 threads
- Thread::ShouldReportStop() tid = 0x1cf227: returning vote for complete stack's back plan
+ Thread::ShouldReportStop() tid = 0x201c27: returning vote for complete stack's back plan
  Returning vote: no
  Returning no
  Process::ShouldBroadcastEvent: should_resume: 1 state: stopped was_restarted: 0 report_stop_vote: -1.
- Process::ShouldBroadcastEvent (0x140e52240) Restarting process from state: stopped
+ Process::ShouldBroadcastEvent (0x142435de0) Restarting process from state: stopped
  Process::PrivateResume() m_stop_id = 4, public state: running private state: stopped
- WillResume Thread #1 (0x0x132145868): tid = 0x1cf227, pc = 0x189f4a418, sp = 0x16fdfeef0, fp = 0x16fdff050, plan = 'base plan', state = running, stop others = 0
+ WillResume Thread #1 (0x0x14071e478): tid = 0x201c27, pc = 0x189f4a418, sp = 0x16fdfef00, fp = 0x16fdff060, plan = 'base plan', state = running, stop others = 0
  (plugin = gdb-remote, state = running)
  Process thinks the process has resumed.
- Process::ShouldBroadcastEvent (0x140e52240) => new state: stopped, last broadcast state: running - NO
- Process::HandlePrivateEvent (pid = 74385) suppressing state stopped (old state running): should_broadcast == false
+ Process::ShouldBroadcastEvent (0x142435de0) => new state: stopped, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 82869) suppressing state stopped (old state running): should_broadcast == false
  timeout = <infinite>, event_sp)...
- Process::ShouldBroadcastEvent (0x140e51760) => new state: running, last broadcast state: running - NO
- Process::HandlePrivateEvent (pid = 74385) suppressing state running (old state running): should_broadcast == false
+ Process::ShouldBroadcastEvent (0x15068e780) => new state: running, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 82869) suppressing state running (old state running): should_broadcast == false
  timeout = <infinite>, event_sp)...
  (plugin = gdb-remote, state = stopped)
  (plugin = gdb-remote, state = stopped, stop_id = 5
- 0x132145868: tid = 0x1cf227: stop info = <NULL> (stop_id = 5)
- 0x132145868: tid = 0x1cf227: stop info = shared-library-event (stop_id = 5)
+ 0x14071e478: tid = 0x201c27: stop info = <NULL> (stop_id = 5)
+ 0x14071e478: tid = 0x201c27: stop info = shared-library-event (stop_id = 5)
  
  ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
- Thread::ShouldStop(0x132145868) for tid = 0x1cf227 0x1cf227, pc = 0x0000000189f4a414
+ Thread::ShouldStop(0x14071e478) for tid = 0x201c27 0x201c27, pc = 0x0000000189f4a414
  ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
  Plan stack initial state:
-  thread #1: tid = 0x1cf227:
+  thread #1: tid = 0x201c27:
     Active plan stack:
       Element 0: Base thread plan.
 
@@ -758,32 +758,32 @@
  StopInfo::ShouldStop async callback says we should not stop, returning ShouldStop of false.
  ThreadList::ShouldStop overall should_stop = 0
  ThreadList::ShouldReportStop 1 threads
- Thread::ShouldReportStop() tid = 0x1cf227: returning vote 0 for current plan
+ Thread::ShouldReportStop() tid = 0x201c27: returning vote 0 for current plan
  Returning no opinion
  Process::ShouldBroadcastEvent: should_resume: 1 state: stopped was_restarted: 0 report_stop_vote: 0.
- Process::ShouldBroadcastEvent (0x13213f6c0) Restarting process from state: stopped
+ Process::ShouldBroadcastEvent (0x14240e8c0) Restarting process from state: stopped
  Process::PrivateResume() m_stop_id = 5, public state: running private state: stopped
- Thread::PushPlan(0x0x132145868): "Single stepping past breakpoint site 9 at 0x189f4a414", tid = 0x1cf227.
- WillResume Thread #1 (0x0x132145868): tid = 0x1cf227, pc = 0x189f4a414, sp = 0x16fdfddb0, fp = 0x16fdfdf70, plan = 'Step over breakpoint trap', state = stepping, stop others = 1
+ Thread::PushPlan(0x0x14071e478): "Single stepping past breakpoint site 9 at 0x189f4a414", tid = 0x201c27.
+ WillResume Thread #1 (0x0x14071e478): tid = 0x201c27, pc = 0x189f4a414, sp = 0x16fdfddc0, fp = 0x16fdfdf80, plan = 'Step over breakpoint trap', state = stepping, stop others = 1
  GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() remove at addr = 0x189f4a414
  (plugin = gdb-remote, state = running)
  Process thinks the process has resumed.
- Process::ShouldBroadcastEvent (0x13213f6c0) => new state: stopped, last broadcast state: running - NO
- Process::HandlePrivateEvent (pid = 74385) suppressing state stopped (old state running): should_broadcast == false
+ Process::ShouldBroadcastEvent (0x14240e8c0) => new state: stopped, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 82869) suppressing state stopped (old state running): should_broadcast == false
  timeout = <infinite>, event_sp)...
- Process::ShouldBroadcastEvent (0x140e31ef0) => new state: running, last broadcast state: running - NO
- Process::HandlePrivateEvent (pid = 74385) suppressing state running (old state running): should_broadcast == false
+ Process::ShouldBroadcastEvent (0x1506e65e0) => new state: running, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 82869) suppressing state running (old state running): should_broadcast == false
  timeout = <infinite>, event_sp)...
  (plugin = gdb-remote, state = stopped)
  (plugin = gdb-remote, state = stopped, stop_id = 6
- 0x132145868: tid = 0x1cf227: stop info = <NULL> (stop_id = 6)
- 0x132145868: tid = 0x1cf227: stop info = trace (stop_id = 6)
+ 0x14071e478: tid = 0x201c27: stop info = <NULL> (stop_id = 6)
+ 0x14071e478: tid = 0x201c27: stop info = trace (stop_id = 6)
  
  ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
- Thread::ShouldStop(0x132145868) for tid = 0x1cf227 0x1cf227, pc = 0x0000000189f4a418
+ Thread::ShouldStop(0x14071e478) for tid = 0x201c27 0x201c27, pc = 0x0000000189f4a418
  ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
  Plan stack initial state:
-  thread #1: tid = 0x1cf227:
+  thread #1: tid = 0x201c27:
     Active plan stack:
       Element 0: Base thread plan.
       Element 1: Single stepping past breakpoint site 9 at 0x189f4a414
@@ -793,9 +793,9 @@
  Completed step over breakpoint plan.
  GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() add at addr = 0x189f4a414
  Plan Step over breakpoint trap auto-continue: true.
- Popping plan: "Step over breakpoint trap", tid = 0x1cf227.
+ Popping plan: "Step over breakpoint trap", tid = 0x201c27.
  Plan stack final state:
-  thread #1: tid = 0x1cf227:
+  thread #1: tid = 0x201c27:
     Active plan stack:
       Element 0: Base thread plan.
     Completed plan stack:
@@ -804,31 +804,31 @@
  vvvvvvvv Thread::ShouldStop End (returning 0) vvvvvvvv
  ThreadList::ShouldStop overall should_stop = 0
  ThreadList::ShouldReportStop 1 threads
- Thread::ShouldReportStop() tid = 0x1cf227: returning vote for complete stack's back plan
+ Thread::ShouldReportStop() tid = 0x201c27: returning vote for complete stack's back plan
  Returning vote: no
  Returning no
  Process::ShouldBroadcastEvent: should_resume: 1 state: stopped was_restarted: 0 report_stop_vote: -1.
- Process::ShouldBroadcastEvent (0x140e31ef0) Restarting process from state: stopped
+ Process::ShouldBroadcastEvent (0x1424342a0) Restarting process from state: stopped
  Process::PrivateResume() m_stop_id = 6, public state: running private state: stopped
- WillResume Thread #1 (0x0x132145868): tid = 0x1cf227, pc = 0x189f4a418, sp = 0x16fdfddb0, fp = 0x16fdfdf70, plan = 'base plan', state = running, stop others = 0
+ WillResume Thread #1 (0x0x14071e478): tid = 0x201c27, pc = 0x189f4a418, sp = 0x16fdfddc0, fp = 0x16fdfdf80, plan = 'base plan', state = running, stop others = 0
  (plugin = gdb-remote, state = running)
  Process thinks the process has resumed.
- Process::ShouldBroadcastEvent (0x140e31ef0) => new state: stopped, last broadcast state: running - NO
- Process::HandlePrivateEvent (pid = 74385) suppressing state stopped (old state running): should_broadcast == false
+ Process::ShouldBroadcastEvent (0x1424342a0) => new state: stopped, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 82869) suppressing state stopped (old state running): should_broadcast == false
  timeout = <infinite>, event_sp)...
- Process::ShouldBroadcastEvent (0x140e07740) => new state: running, last broadcast state: running - NO
- Process::HandlePrivateEvent (pid = 74385) suppressing state running (old state running): should_broadcast == false
+ Process::ShouldBroadcastEvent (0x1506e65e0) => new state: running, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 82869) suppressing state running (old state running): should_broadcast == false
  timeout = <infinite>, event_sp)...
  (plugin = gdb-remote, state = stopped)
  (plugin = gdb-remote, state = stopped, stop_id = 7
- 0x132145868: tid = 0x1cf227: stop info = <NULL> (stop_id = 7)
- 0x132145868: tid = 0x1cf227: stop info = breakpoint 1.1 (stop_id = 7)
+ 0x14071e478: tid = 0x201c27: stop info = <NULL> (stop_id = 7)
+ 0x14071e478: tid = 0x201c27: stop info = breakpoint 1.1 (stop_id = 7)
  
  ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
- Thread::ShouldStop(0x132145868) for tid = 0x1cf227 0x1cf227, pc = 0x0000000100003ecc
+ Thread::ShouldStop(0x14071e478) for tid = 0x201c27 0x201c27, pc = 0x0000000100003ecc
  ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
  Plan stack initial state:
-  thread #1: tid = 0x1cf227:
+  thread #1: tid = 0x201c27:
     Active plan stack:
       Element 0: Base thread plan.
 
@@ -841,18 +841,18 @@
   hit count = 1   
 , stopping.
 
- Base plan discarding thread plans for thread tid = 0x1cf227 (breakpoint hit.)
- Discarding thread plans for thread (tid = 0x1cf227, force 0)
+ Base plan discarding thread plans for thread tid = 0x201c27 (breakpoint hit.)
+ Discarding thread plans for thread (tid = 0x201c27, force 0)
  Base plan says should stop: 1.
  Plan stack final state:
-  thread #1: tid = 0x1cf227:
+  thread #1: tid = 0x201c27:
     Active plan stack:
       Element 0: Base thread plan.
 
  vvvvvvvv Thread::ShouldStop End (returning 1) vvvvvvvv
  ThreadList::ShouldStop overall should_stop = 1
- Process::ShouldBroadcastEvent (0x140e07740) => new state: stopped, last broadcast state: stopped - YES
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state stopped (old state stopped) to public
+ Process::ShouldBroadcastEvent (0x1424428e0) => new state: stopped, last broadcast state: stopped - YES
+ Process::HandlePrivateEvent (pid = 82869) broadcasting new state stopped (old state stopped) to public
  timeout = <infinite>, event_sp)...
  (plugin = gdb-remote, state = stopped, restarted = 0)
  (plugin = gdb-remote, state = stopped) -- unlocking run lock
@@ -863,21 +863,21 @@
  HandleCommand, (revised) command_string: 'thread step-in'
  HandleCommand, wants_raw_input:'False'
  HandleCommand, command line after removing command name(s): ''
- Thread::PushPlan(0x0x132145868): "Stepping one instruction past 0x0000000100003ecc stepping into calls", tid = 0x1cf227.
+ Thread::PushPlan(0x0x14071e478): "Stepping one instruction past 0x0000000100003ecc stepping into calls", tid = 0x201c27.
  (plugin = gdb-remote) -- locking run lock
  Process::PrivateResume() m_stop_id = 7, public state: stopped private state: stopped
  Target::AddBreakpoint (internal = yes) => break_id = -7: names = {'start_wqthread', '_pthread_wqthread', '_pthread_start'}, modules(2) = libsystem_c.dylib, libSystem.B.dylib
 
 
- Thread::PushPlan(0x0x132145868): "Single stepping past breakpoint site 8 at 0x100003ecc", tid = 0x1cf227.
- WillResume Thread #1 (0x0x132145868): tid = 0x1cf227, pc = 0x100003ecc, sp = 0x16fdff060, fp = 0x16fdff280, plan = 'Step over breakpoint trap', state = stepping, stop others = 1
+ Thread::PushPlan(0x0x14071e478): "Single stepping past breakpoint site 8 at 0x100003ecc", tid = 0x201c27.
+ WillResume Thread #1 (0x0x14071e478): tid = 0x201c27, pc = 0x100003ecc, sp = 0x16fdff070, fp = 0x16fdff290, plan = 'Step over breakpoint trap', state = stepping, stop others = 1
  GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() remove at addr = 0x100003ecc
  (plugin = gdb-remote, state = running)
- Current Plan for thread 1(0x132145868) (0x1cf227, stepping): Step over breakpoint trap being asked whether we should report run.
- Process::ShouldBroadcastEvent (0x1322075f0) => new state: running, last broadcast state: running - YES
- Process thinks the process has resumed.
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state running (old state running) to public
+ Current Plan for thread 1(0x14071e478) (0x201c27, stepping): Step over breakpoint trap being asked whether we should report run.
+ Process::ShouldBroadcastEvent (0x142443270) => new state: running, last broadcast state: running - YES
+ Process::HandlePrivateEvent (pid = 82869) broadcasting new state running (old state running) to public
  Process::PushProcessIOHandler pushing IO handler
+ Process thinks the process has resumed.
  Process::HandlePrivateEvent updated m_iohandler_sync to 2
  waited from m_iohandler_sync to change from 1. New value is 2.
  (plugin = gdb-remote, state = running, restarted = 0)
@@ -885,14 +885,14 @@
  timeout = <infinite>, event_sp)...
  (plugin = gdb-remote, state = stopped)
  (plugin = gdb-remote, state = stopped, stop_id = 8
- 0x132145868: tid = 0x1cf227: stop info = <NULL> (stop_id = 8)
- 0x132145868: tid = 0x1cf227: stop info = trace (stop_id = 8)
+ 0x14071e478: tid = 0x201c27: stop info = <NULL> (stop_id = 8)
+ 0x14071e478: tid = 0x201c27: stop info = trace (stop_id = 8)
  
  ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
- Thread::ShouldStop(0x132145868) for tid = 0x1cf227 0x1cf227, pc = 0x0000000100003ed0
+ Thread::ShouldStop(0x14071e478) for tid = 0x201c27 0x201c27, pc = 0x0000000100003ed0
  ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
  Plan stack initial state:
-  thread #1: tid = 0x1cf227:
+  thread #1: tid = 0x201c27:
     Active plan stack:
       Element 0: Base thread plan.
       Element 1: Stepping one instruction past 0x0000000100003ecc stepping into calls
@@ -902,12 +902,12 @@
  Plan Step over breakpoint trap should stop: 1.
  Completed step over breakpoint plan.
  GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() add at addr = 0x100003ecc
- Popping plan: "Step over breakpoint trap", tid = 0x1cf227.
+ Popping plan: "Step over breakpoint trap", tid = 0x201c27.
  Plan Step over single instruction should stop: 1.
  Completed single instruction step plan.
- Popping plan: "Step over single instruction", tid = 0x1cf227.
+ Popping plan: "Step over single instruction", tid = 0x201c27.
  Plan stack final state:
-  thread #1: tid = 0x1cf227:
+  thread #1: tid = 0x201c27:
     Active plan stack:
       Element 0: Base thread plan.
     Completed plan stack:
@@ -916,8 +916,8 @@
 
  vvvvvvvv Thread::ShouldStop End (returning 1) vvvvvvvv
  ThreadList::ShouldStop overall should_stop = 1
- Process::ShouldBroadcastEvent (0x120f04a30) => new state: stopped, last broadcast state: stopped - YES
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state stopped (old state stopped) to public
+ Process::ShouldBroadcastEvent (0x142435020) => new state: stopped, last broadcast state: stopped - YES
+ Process::HandlePrivateEvent (pid = 82869) broadcasting new state stopped (old state stopped) to public
  timeout = <infinite>, event_sp)...
  (plugin = gdb-remote, state = stopped, restarted = 0)
  (plugin = gdb-remote, state = stopped) -- unlocking run lock
@@ -927,40 +927,40 @@
  HandleCommand, (revised) command_string: 'thread step-in'
  HandleCommand, wants_raw_input:'False'
  HandleCommand, command line after removing command name(s): ''
- Thread::PushPlan(0x0x132145868): "Stepping one instruction past 0x0000000100003ed0 stepping into calls", tid = 0x1cf227.
+ Thread::PushPlan(0x0x14071e478): "Stepping one instruction past 0x0000000100003ed0 stepping into calls", tid = 0x201c27.
  (plugin = gdb-remote) -- locking run lock
  Process::PrivateResume() m_stop_id = 8, public state: stopped private state: stopped
- WillResume Thread #1 (0x0x132145868): tid = 0x1cf227, pc = 0x100003ed0, sp = 0x16fdff030, fp = 0x16fdff280, plan = 'Step over single instruction', state = stepping, stop others = 1
+ WillResume Thread #1 (0x0x14071e478): tid = 0x201c27, pc = 0x100003ed0, sp = 0x16fdff040, fp = 0x16fdff290, plan = 'Step over single instruction', state = stepping, stop others = 1
  (plugin = gdb-remote, state = running)
- Current Plan for thread 1(0x132145868) (0x1cf227, stepping): Step over single instruction being asked whether we should report run.
- Process::ShouldBroadcastEvent (0x120f05690) => new state: running, last broadcast state: running - YES
- Process thinks the process has resumed.
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state running (old state running) to public
+ Current Plan for thread 1(0x14071e478) (0x201c27, stepping): Step over single instruction being asked whether we should report run.
+ Process::ShouldBroadcastEvent (0x130607500) => new state: running, last broadcast state: running - YES
+ Process::HandlePrivateEvent (pid = 82869) broadcasting new state running (old state running) to public
  Process::PushProcessIOHandler pushing IO handler
  Process::HandlePrivateEvent updated m_iohandler_sync to 3
- waited from m_iohandler_sync to change from 2. New value is 3.
+ Process thinks the process has resumed.
  (plugin = gdb-remote, state = running, restarted = 0)
- HandleCommand, command succeeded
  timeout = <infinite>, event_sp)...
+ waited from m_iohandler_sync to change from 2. New value is 3.
+ HandleCommand, command succeeded
  (plugin = gdb-remote, state = stopped)
  (plugin = gdb-remote, state = stopped, stop_id = 9
- 0x132145868: tid = 0x1cf227: stop info = <NULL> (stop_id = 9)
- 0x132145868: tid = 0x1cf227: stop info = trace (stop_id = 9)
+ 0x14071e478: tid = 0x201c27: stop info = <NULL> (stop_id = 9)
+ 0x14071e478: tid = 0x201c27: stop info = trace (stop_id = 9)
  
  ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
- Thread::ShouldStop(0x132145868) for tid = 0x1cf227 0x1cf227, pc = 0x0000000100003ed4
+ Thread::ShouldStop(0x14071e478) for tid = 0x201c27 0x201c27, pc = 0x0000000100003ed4
  ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
  Plan stack initial state:
-  thread #1: tid = 0x1cf227:
+  thread #1: tid = 0x201c27:
     Active plan stack:
       Element 0: Base thread plan.
       Element 1: Stepping one instruction past 0x0000000100003ed0 stepping into calls
 
  Plan Step over single instruction should stop: 1.
  Completed single instruction step plan.
- Popping plan: "Step over single instruction", tid = 0x1cf227.
+ Popping plan: "Step over single instruction", tid = 0x201c27.
  Plan stack final state:
-  thread #1: tid = 0x1cf227:
+  thread #1: tid = 0x201c27:
     Active plan stack:
       Element 0: Base thread plan.
     Completed plan stack:
@@ -968,325 +968,8 @@
 
  vvvvvvvv Thread::ShouldStop End (returning 1) vvvvvvvv
  ThreadList::ShouldStop overall should_stop = 1
- Process::ShouldBroadcastEvent (0x120e04120) => new state: stopped, last broadcast state: stopped - YES
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state stopped (old state stopped) to public
- timeout = <infinite>, event_sp)...
- (plugin = gdb-remote, state = stopped, restarted = 0)
- (plugin = gdb-remote, state = stopped) -- unlocking run lock
- Frame #0 not recognized
- Processing command: s
- HandleCommand, cmd_obj : 'thread step-in'
- HandleCommand, (revised) command_string: 'thread step-in'
- HandleCommand, wants_raw_input:'False'
- HandleCommand, command line after removing command name(s): ''
- Thread::PushPlan(0x0x132145868): "Stepping one instruction past 0x0000000100003ed4 stepping into calls", tid = 0x1cf227.
- (plugin = gdb-remote) -- locking run lock
- Process::PrivateResume() m_stop_id = 9, public state: stopped private state: stopped
- WillResume Thread #1 (0x0x132145868): tid = 0x1cf227, pc = 0x100003ed4, sp = 0x16fdff030, fp = 0x16fdff280, plan = 'Step over single instruction', state = stepping, stop others = 1
- (plugin = gdb-remote, state = running)
- Current Plan for thread 1(0x132145868) (0x1cf227, stepping): Step over single instruction being asked whether we should report run.
- Process::ShouldBroadcastEvent (0x140e07740) => new state: running, last broadcast state: running - YES
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state running (old state running) to public
- Process::PushProcessIOHandler pushing IO handler
- Process::HandlePrivateEvent updated m_iohandler_sync to 4
- Process thinks the process has resumed.
- (plugin = gdb-remote, state = running, restarted = 0)
- waited from m_iohandler_sync to change from 3. New value is 4.
- HandleCommand, command succeeded
- timeout = <infinite>, event_sp)...
- (plugin = gdb-remote, state = stopped)
- (plugin = gdb-remote, state = stopped, stop_id = 10
- 0x132145868: tid = 0x1cf227: stop info = <NULL> (stop_id = 10)
- 0x132145868: tid = 0x1cf227: stop info = trace (stop_id = 10)
- 
- ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
- Thread::ShouldStop(0x132145868) for tid = 0x1cf227 0x1cf227, pc = 0x0000000100003ed8
- ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
- Plan stack initial state:
-  thread #1: tid = 0x1cf227:
-    Active plan stack:
-      Element 0: Base thread plan.
-      Element 1: Stepping one instruction past 0x0000000100003ed4 stepping into calls
-
- Plan Step over single instruction should stop: 1.
- Completed single instruction step plan.
- Popping plan: "Step over single instruction", tid = 0x1cf227.
- Plan stack final state:
-  thread #1: tid = 0x1cf227:
-    Active plan stack:
-      Element 0: Base thread plan.
-    Completed plan stack:
-      Element 0: Stepping one instruction past 0x0000000100003ed4 stepping into calls
-
- vvvvvvvv Thread::ShouldStop End (returning 1) vvvvvvvv
- ThreadList::ShouldStop overall should_stop = 1
- Process::ShouldBroadcastEvent (0x132144750) => new state: stopped, last broadcast state: stopped - YES
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state stopped (old state stopped) to public
- timeout = <infinite>, event_sp)...
- (plugin = gdb-remote, state = stopped, restarted = 0)
- (plugin = gdb-remote, state = stopped) -- unlocking run lock
- Frame #0 not recognized
- Processing command: s
- HandleCommand, cmd_obj : 'thread step-in'
- HandleCommand, (revised) command_string: 'thread step-in'
- HandleCommand, wants_raw_input:'False'
- HandleCommand, command line after removing command name(s): ''
- SynthesizeTailCallFrames: can't find previous function
- Thread::PushPlan(0x0x132145868): "Stepping one instruction past 0x0000000100003ed8 stepping into calls", tid = 0x1cf227.
- (plugin = gdb-remote) -- locking run lock
- Process::PrivateResume() m_stop_id = 10, public state: stopped private state: stopped
- WillResume Thread #1 (0x0x132145868): tid = 0x1cf227, pc = 0x100003ed8, sp = 0x16fdff030, fp = 0x16fdff050, plan = 'Step over single instruction', state = stepping, stop others = 1
- (plugin = gdb-remote, state = running)
- Current Plan for thread 1(0x132145868) (0x1cf227, stepping): Step over single instruction being asked whether we should report run.
- Process::ShouldBroadcastEvent (0x140e07740) => new state: running, last broadcast state: running - YES
- Process thinks the process has resumed.
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state running (old state running) to public
- Process::PushProcessIOHandler pushing IO handler
- Process::HandlePrivateEvent updated m_iohandler_sync to 5
- timeout = <infinite>, event_sp)...
- (plugin = gdb-remote, state = running, restarted = 0)
- waited from m_iohandler_sync to change from 4. New value is 5.
- HandleCommand, command succeeded
- (plugin = gdb-remote, state = stopped)
- (plugin = gdb-remote, state = stopped, stop_id = 11
- 0x132145868: tid = 0x1cf227: stop info = <NULL> (stop_id = 11)
- 0x132145868: tid = 0x1cf227: stop info = trace (stop_id = 11)
- 
- ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
- Thread::ShouldStop(0x132145868) for tid = 0x1cf227 0x1cf227, pc = 0x0000000100003edc
- ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
- Plan stack initial state:
-  thread #1: tid = 0x1cf227:
-    Active plan stack:
-      Element 0: Base thread plan.
-      Element 1: Stepping one instruction past 0x0000000100003ed8 stepping into calls
-
- Plan Step over single instruction should stop: 1.
- Completed single instruction step plan.
- Popping plan: "Step over single instruction", tid = 0x1cf227.
- Plan stack final state:
-  thread #1: tid = 0x1cf227:
-    Active plan stack:
-      Element 0: Base thread plan.
-    Completed plan stack:
-      Element 0: Stepping one instruction past 0x0000000100003ed8 stepping into calls
-
- vvvvvvvv Thread::ShouldStop End (returning 1) vvvvvvvv
- ThreadList::ShouldStop overall should_stop = 1
- Process::ShouldBroadcastEvent (0x140e07740) => new state: stopped, last broadcast state: stopped - YES
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state stopped (old state stopped) to public
- timeout = <infinite>, event_sp)...
- (plugin = gdb-remote, state = stopped, restarted = 0)
- (plugin = gdb-remote, state = stopped) -- unlocking run lock
- Frame #0 not recognized
- Processing command: s
- HandleCommand, cmd_obj : 'thread step-in'
- HandleCommand, (revised) command_string: 'thread step-in'
- HandleCommand, wants_raw_input:'False'
- HandleCommand, command line after removing command name(s): ''
- SynthesizeTailCallFrames: can't find previous function
- Thread::PushPlan(0x0x132145868): "Stepping one instruction past 0x0000000100003edc stepping into calls", tid = 0x1cf227.
- (plugin = gdb-remote) -- locking run lock
- Process::PrivateResume() m_stop_id = 11, public state: stopped private state: stopped
- WillResume Thread #1 (0x0x132145868): tid = 0x1cf227, pc = 0x100003edc, sp = 0x16fdff030, fp = 0x16fdff050, plan = 'Step over single instruction', state = stepping, stop others = 1
- (plugin = gdb-remote, state = running)
- Current Plan for thread 1(0x132145868) (0x1cf227, stepping): Step over single instruction being asked whether we should report run.
- Process::ShouldBroadcastEvent (0x132134780) => new state: running, last broadcast state: running - YES
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state running (old state running) to public
- Process::PushProcessIOHandler pushing IO handler
- Process thinks the process has resumed.
- waited from m_iohandler_sync to change from 5. New value is 6.
- Process::HandlePrivateEvent updated m_iohandler_sync to 6
- HandleCommand, command succeeded
- timeout = <infinite>, event_sp)...
- (plugin = gdb-remote, state = running, restarted = 0)
- (plugin = gdb-remote, state = stopped)
- (plugin = gdb-remote, state = stopped, stop_id = 12
- 0x132145868: tid = 0x1cf227: stop info = <NULL> (stop_id = 12)
- 0x132145868: tid = 0x1cf227: stop info = trace (stop_id = 12)
- 
- ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
- Thread::ShouldStop(0x132145868) for tid = 0x1cf227 0x1cf227, pc = 0x0000000100003ee0
- ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
- Plan stack initial state:
-  thread #1: tid = 0x1cf227:
-    Active plan stack:
-      Element 0: Base thread plan.
-      Element 1: Stepping one instruction past 0x0000000100003edc stepping into calls
-
- Plan Step over single instruction should stop: 1.
- Completed single instruction step plan.
- Popping plan: "Step over single instruction", tid = 0x1cf227.
- Plan stack final state:
-  thread #1: tid = 0x1cf227:
-    Active plan stack:
-      Element 0: Base thread plan.
-    Completed plan stack:
-      Element 0: Stepping one instruction past 0x0000000100003edc stepping into calls
-
- vvvvvvvv Thread::ShouldStop End (returning 1) vvvvvvvv
- ThreadList::ShouldStop overall should_stop = 1
- Process::ShouldBroadcastEvent (0x14200aae0) => new state: stopped, last broadcast state: stopped - YES
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state stopped (old state stopped) to public
- timeout = <infinite>, event_sp)...
- (plugin = gdb-remote, state = stopped, restarted = 0)
- (plugin = gdb-remote, state = stopped) -- unlocking run lock
- Frame #0 not recognized
- Processing command: s
- HandleCommand, cmd_obj : 'thread step-in'
- HandleCommand, (revised) command_string: 'thread step-in'
- HandleCommand, wants_raw_input:'False'
- HandleCommand, command line after removing command name(s): ''
- SynthesizeTailCallFrames: can't find previous function
- Thread::PushPlan(0x0x132145868): "Stepping one instruction past 0x0000000100003ee0 stepping into calls", tid = 0x1cf227.
- (plugin = gdb-remote) -- locking run lock
- Process::PrivateResume() m_stop_id = 12, public state: stopped private state: stopped
- WillResume Thread #1 (0x0x132145868): tid = 0x1cf227, pc = 0x100003ee0, sp = 0x16fdff030, fp = 0x16fdff050, plan = 'Step over single instruction', state = stepping, stop others = 1
- (plugin = gdb-remote, state = running)
- Current Plan for thread 1(0x132145868) (0x1cf227, stepping): Step over single instruction being asked whether we should report run.
- Process::ShouldBroadcastEvent (0x1322075f0) => new state: running, last broadcast state: running - YES
- Process thinks the process has resumed.
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state running (old state running) to public
- Process::PushProcessIOHandler pushing IO handler
- Process::HandlePrivateEvent updated m_iohandler_sync to 7
- timeout = <infinite>, event_sp)...
- waited from m_iohandler_sync to change from 6. New value is 7.
- HandleCommand, command succeeded
- (plugin = gdb-remote, state = running, restarted = 0)
- (plugin = gdb-remote, state = stopped)
- (plugin = gdb-remote, state = stopped, stop_id = 13
- 0x132145868: tid = 0x1cf227: stop info = <NULL> (stop_id = 13)
- 0x132145868: tid = 0x1cf227: stop info = trace (stop_id = 13)
- 
- ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
- Thread::ShouldStop(0x132145868) for tid = 0x1cf227 0x1cf227, pc = 0x0000000100003ee4
- ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
- Plan stack initial state:
-  thread #1: tid = 0x1cf227:
-    Active plan stack:
-      Element 0: Base thread plan.
-      Element 1: Stepping one instruction past 0x0000000100003ee0 stepping into calls
-
- Plan Step over single instruction should stop: 1.
- Completed single instruction step plan.
- Popping plan: "Step over single instruction", tid = 0x1cf227.
- Plan stack final state:
-  thread #1: tid = 0x1cf227:
-    Active plan stack:
-      Element 0: Base thread plan.
-    Completed plan stack:
-      Element 0: Stepping one instruction past 0x0000000100003ee0 stepping into calls
-
- vvvvvvvv Thread::ShouldStop End (returning 1) vvvvvvvv
- ThreadList::ShouldStop overall should_stop = 1
- Process::ShouldBroadcastEvent (0x120f040b0) => new state: stopped, last broadcast state: stopped - YES
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state stopped (old state stopped) to public
- timeout = <infinite>, event_sp)...
- (plugin = gdb-remote, state = stopped, restarted = 0)
- (plugin = gdb-remote, state = stopped) -- unlocking run lock
- Frame #0 not recognized
- Processing command: s
- HandleCommand, cmd_obj : 'thread step-in'
- HandleCommand, (revised) command_string: 'thread step-in'
- HandleCommand, wants_raw_input:'False'
- HandleCommand, command line after removing command name(s): ''
- SynthesizeTailCallFrames: can't find previous function
- Thread::PushPlan(0x0x132145868): "Stepping one instruction past 0x0000000100003ee4 stepping into calls", tid = 0x1cf227.
- (plugin = gdb-remote) -- locking run lock
- Process::PrivateResume() m_stop_id = 13, public state: stopped private state: stopped
- WillResume Thread #1 (0x0x132145868): tid = 0x1cf227, pc = 0x100003ee4, sp = 0x16fdff030, fp = 0x16fdff050, plan = 'Step over single instruction', state = stepping, stop others = 1
- (plugin = gdb-remote, state = running)
- Current Plan for thread 1(0x132145868) (0x1cf227, stepping): Step over single instruction being asked whether we should report run.
- Process::ShouldBroadcastEvent (0x120f092a0) => new state: running, last broadcast state: running - YES
- Process thinks the process has resumed.
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state running (old state running) to public
- Process::PushProcessIOHandler pushing IO handler
- Process::HandlePrivateEvent updated m_iohandler_sync to 8
- waited from m_iohandler_sync to change from 7. New value is 8.
- (plugin = gdb-remote, state = running, restarted = 0)
- timeout = <infinite>, event_sp)...
- HandleCommand, command succeeded
- (plugin = gdb-remote, state = stopped)
- (plugin = gdb-remote, state = stopped, stop_id = 14
- 0x132145868: tid = 0x1cf227: stop info = <NULL> (stop_id = 14)
- 0x132145868: tid = 0x1cf227: stop info = trace (stop_id = 14)
- 
- ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
- Thread::ShouldStop(0x132145868) for tid = 0x1cf227 0x1cf227, pc = 0x0000000100003dd8
- ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
- Plan stack initial state:
-  thread #1: tid = 0x1cf227:
-    Active plan stack:
-      Element 0: Base thread plan.
-      Element 1: Stepping one instruction past 0x0000000100003ee4 stepping into calls
-
- Plan Step over single instruction should stop: 1.
- Completed single instruction step plan.
- Popping plan: "Step over single instruction", tid = 0x1cf227.
- Plan stack final state:
-  thread #1: tid = 0x1cf227:
-    Active plan stack:
-      Element 0: Base thread plan.
-    Completed plan stack:
-      Element 0: Stepping one instruction past 0x0000000100003ee4 stepping into calls
-
- vvvvvvvv Thread::ShouldStop End (returning 1) vvvvvvvv
- ThreadList::ShouldStop overall should_stop = 1
- Process::ShouldBroadcastEvent (0x120f09810) => new state: stopped, last broadcast state: stopped - YES
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state stopped (old state stopped) to public
- timeout = <infinite>, event_sp)...
- (plugin = gdb-remote, state = stopped, restarted = 0)
- (plugin = gdb-remote, state = stopped) -- unlocking run lock
- Frame #0 not recognized
- Processing command: 
- HandleCommand, cmd_obj : 'thread step-in'
- HandleCommand, (revised) command_string: 'thread step-in'
- HandleCommand, wants_raw_input:'False'
- HandleCommand, command line after removing command name(s): ''
- SynthesizeTailCallFrames: can't find previous function
- Thread::PushPlan(0x0x132145868): "Stepping one instruction past 0x0000000100003dd8 stepping into calls", tid = 0x1cf227.
- (plugin = gdb-remote) -- locking run lock
- Process::PrivateResume() m_stop_id = 14, public state: stopped private state: stopped
- WillResume Thread #1 (0x0x132145868): tid = 0x1cf227, pc = 0x100003dd8, sp = 0x16fdff030, fp = 0x16fdff050, plan = 'Step over single instruction', state = stepping, stop others = 1
- (plugin = gdb-remote, state = running)
- Current Plan for thread 1(0x132145868) (0x1cf227, stepping): Step over single instruction being asked whether we should report run.
- Process::ShouldBroadcastEvent (0x120f08ad0) => new state: running, last broadcast state: running - YES
- Process thinks the process has resumed.
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state running (old state running) to public
- Process::PushProcessIOHandler pushing IO handler
- Process::HandlePrivateEvent updated m_iohandler_sync to 9
- waited from m_iohandler_sync to change from 8. New value is 9.
- HandleCommand, command succeeded
- (plugin = gdb-remote, state = running, restarted = 0)
- timeout = <infinite>, event_sp)...
- (plugin = gdb-remote, state = stopped)
- (plugin = gdb-remote, state = stopped, stop_id = 15
- 0x132145868: tid = 0x1cf227: stop info = <NULL> (stop_id = 15)
- 0x132145868: tid = 0x1cf227: stop info = trace (stop_id = 15)
- 
- ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
- Thread::ShouldStop(0x132145868) for tid = 0x1cf227 0x1cf227, pc = 0x0000000100003ddc
- ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
- Plan stack initial state:
-  thread #1: tid = 0x1cf227:
-    Active plan stack:
-      Element 0: Base thread plan.
-      Element 1: Stepping one instruction past 0x0000000100003dd8 stepping into calls
-
- Plan Step over single instruction should stop: 1.
- Completed single instruction step plan.
- Popping plan: "Step over single instruction", tid = 0x1cf227.
- Plan stack final state:
-  thread #1: tid = 0x1cf227:
-    Active plan stack:
-      Element 0: Base thread plan.
-    Completed plan stack:
-      Element 0: Stepping one instruction past 0x0000000100003dd8 stepping into calls
-
- vvvvvvvv Thread::ShouldStop End (returning 1) vvvvvvvv
- ThreadList::ShouldStop overall should_stop = 1
- Process::ShouldBroadcastEvent (0x120f08ad0) => new state: stopped, last broadcast state: stopped - YES
- Process::HandlePrivateEvent (pid = 74385) broadcasting new state stopped (old state stopped) to public
+ Process::ShouldBroadcastEvent (0x1420047a0) => new state: stopped, last broadcast state: stopped - YES
+ Process::HandlePrivateEvent (pid = 82869) broadcasting new state stopped (old state stopped) to public
  timeout = <infinite>, event_sp)...
  (plugin = gdb-remote, state = stopped, restarted = 0)
  (plugin = gdb-remote, state = stopped) -- unlocking run lock
@@ -1297,16 +980,17 @@
  HandleCommand, wants_raw_input:'False'
  HandleCommand, command line after removing command name(s): ''
  HandleCommand, command did not succeed
- Discarding thread plans for thread (tid = 0x1cf227, force 1)
+ Discarding thread plans for thread (tid = 0x201c27, force 1)
  GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() remove at addr = 0x100003ecc
  GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() remove at addr = 0x189f4a414
- ::waitpid (pid = 74385, &status, 0) => pid = 74385, status = 0x00000009 (SIGNALED), signal = 9, exit_status = -1
- pid = 74385, signal = 9, status = -1
+ ::waitpid (pid = 82869, &status, 0) => pid = 82869, status = 0x00000009 (SIGNALED), signal = 9, exit_status = -1
+ pid = 82869, signal = 9, status = -1
  (plugin = gdb-remote status=9 (0x00000009), description="killed")
  Process::ControlPrivateStateThread (signal = 1)
  Sending control event of type: 1.
- Process::RunPrivateStateThread (arg = 0x14104f800, pid = 74385) got a control event: 1
- Process::RunPrivateStateThread (arg = 0x14104f800, pid = 74385) thread exiting...
+ ::waitpid (pid = 82870, &status, 0) => pid = 82870, status = 0x00000000 (EXITED), signal = 0, exit_status = 0
+ Process::RunPrivateStateThread (arg = 0x14180e400, pid = 82869) got a control event: 1
+ Process::RunPrivateStateThread (arg = 0x14180e400, pid = 82869) thread exiting...
  Target::RemoveBreakpointByID (break_id = -6, internal = yes)
 
  Target::DisableBreakpointByID (break_id = -6, internal = yes)
@@ -1318,5 +1002,4 @@
  Target::ClearAllWatchpointHistoricValues
 
  Went to stop the private state thread, but it was already invalid.
- ::waitpid (pid = 74386, &status, 0) => pid = 74386, status = 0x00000000 (EXITED), signal = 0, exit_status = 0
  Couldn't get scratch TypeSystemClang
