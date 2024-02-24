@@ -1,0 +1,40 @@
+(base) hampana@Hampana set03 % gcc problem02.c
+problem02.c:19:16: warning: format specifies type 'float *' but the argument has type 'float **' [-Wformat]
+    scanf("%f",&x1); 
+           ~~  ^~~
+problem02.c:21:16: warning: format specifies type 'float *' but the argument has type 'float **' [-Wformat]
+    scanf("%f",&y1);
+           ~~  ^~~
+problem02.c:23:16: warning: format specifies type 'float *' but the argument has type 'float **' [-Wformat]
+    scanf("%f",&x2); 
+           ~~  ^~~
+problem02.c:25:16: warning: format specifies type 'float *' but the argument has type 'float **' [-Wformat]
+    scanf("%f",&y2);
+           ~~  ^~~
+problem02.c:27:16: warning: format specifies type 'float *' but the argument has type 'float **' [-Wformat]
+    scanf("%f",&x3); 
+           ~~  ^~~
+problem02.c:29:16: warning: format specifies type 'float *' but the argument has type 'float **' [-Wformat]
+    scanf("%f",&y3);
+           ~~  ^~~
+6 warnings generated.
+ld: Undefined symbols:
+  _is_triangle, referenced from:
+      _main in problem02-e2fced.o
+  _output, referenced from:
+      _main in problem02-e2fced.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+(base) hampana@Hampana set03 % gcc problem02.c -o problem02          
+ld: Undefined symbols:
+  _is_triangle, referenced from:
+      _main in problem02-73fee3.o
+  _output, referenced from:
+      _main in problem02-73fee3.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+(base) hampana@Hampana set03 % gcc -g -O0 problem02.c -o problem02.exe
+ld: Undefined symbols:
+  _is_triangle, referenced from:
+      _main in problem02-f5e429.o
+  _output, referenced from:
+      _main in problem02-f5e429.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
