@@ -38,3 +38,15 @@ ld: Undefined symbols:
   _output, referenced from:
       _main in problem02-f5e429.o
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
+(base) hampana@Hampana set03 % gcc -g -O0 problem02.c -o problem02.exe
+problem02.c:55:30: warning: more '%' conversions than data arguments [-Wformat-insufficient-args]
+        printf("The points (%f,%f) , (%f,%f) , (%f,%f) do not form triangle\n");
+                            ~^
+1 warning generated.
+(base) hampana@Hampana set03 % lldb ./problem02.c
+(lldb) target create "./problem02.c"
+error: '/Users/hampana/Documents/c-activity-sets-hampana/set03/problem02.c' doesn't contain any 'host' platform architectures: arm64, armv7, armv7f, armv7k, armv7s, armv7m, armv7em, armv6m, armv6, armv5, armv4, arm, thumbv7, thumbv7k, thumbv7s, thumbv7f, thumbv7m, thumbv7em, thumbv6m, thumbv6, thumbv5, thumbv4t, thumb, x86_64, x86_64, arm64, arm64e, arm64, arm64e
+(lldb) r
+error: invalid target, create a target using the 'target create' command
+(lldb) q
+(base) hampana@Hampana set03 % gcc -g -O0 problem02.c -o problem02.exe
