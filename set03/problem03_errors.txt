@@ -1,0 +1,45 @@
+(base) hampana@Hampana set03 % gcc problem03.c
+ld: Undefined symbols:
+  _output, referenced from:
+      _main in problem03-8262a8.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+(base) hampana@Hampana set03 % gcc problem03.c -o problem03
+ld: Undefined symbols:
+  _output, referenced from:
+      _main in problem03-ed4e0b.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+(base) hampana@Hampana set03 % gcc -g -O0 problem03.c -o problem03.exe
+ld: Undefined symbols:
+  _output, referenced from:
+      _main in problem03-4da3c6.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+(base) hampana@Hampana set03 % git add .
+(base) hampana@Hampana set03 % git commit -m "test"
+[main 15a326d] test
+ Committer: Asha <hampana@Hampana.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 40 insertions(+)
+(base) hampana@Hampana set03 % git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 546 bytes | 546.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/hampanass/c-activity-sets-hampana.git
+   c49687a..15a326d  main -> main
+(base) hampana@Hampana set03 % gcc problem03.c
+(base) hampana@Hampana set03 % gcc problem03.c -o problem03
+(base) hampana@Hampana set03 % gcc -g -O0 problem03.c -o problem03.exe

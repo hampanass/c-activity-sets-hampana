@@ -23,7 +23,7 @@ int input_number()
 
 int is_prime(int n)
 {
-    if (n <= 1)
+    if (n <= 2)
     {
         return 0;
     }
@@ -38,3 +38,13 @@ int is_prime(int n)
        return 1; 
 }
 
+void output(int n, int result)
+{
+   if(result == 1)
+   {
+    printf("%d is a prime number\n",n);
+   }
+   else{
+    printf("%d is not a prime number\n",n);
+   }
+}

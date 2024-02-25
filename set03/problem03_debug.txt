@@ -1,0 +1,100 @@
+(base) hampana@Hampana set03 % gcc problem03.c
+ld: Undefined symbols:
+  _output, referenced from:
+      _main in problem03-8262a8.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+(base) hampana@Hampana set03 % gcc problem03.c -o problem03
+ld: Undefined symbols:
+  _output, referenced from:
+      _main in problem03-ed4e0b.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+(base) hampana@Hampana set03 % gcc -g -O0 problem03.c -o problem03.exe
+ld: Undefined symbols:
+  _output, referenced from:
+      _main in problem03-4da3c6.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+(base) hampana@Hampana set03 % git add .
+(base) hampana@Hampana set03 % git commit -m "test"
+[main 15a326d] test
+ Committer: Asha <hampana@Hampana.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 40 insertions(+)
+(base) hampana@Hampana set03 % git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 546 bytes | 546.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/hampanass/c-activity-sets-hampana.git
+   c49687a..15a326d  main -> main
+(base) hampana@Hampana set03 % gcc problem03.c
+(base) hampana@Hampana set03 % gcc problem03.c -o problem03
+(base) hampana@Hampana set03 % gcc -g -O0 problem03.c -o problem03.exe
+(base) hampana@Hampana set03 % lldb ./problem03
+(lldb) target create "./problem03"
+Current executable set to '/Users/hampana/Documents/c-activity-sets-hampana/set03/problem03' (arm64).
+(lldb) r
+Process 46911 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set03/problem03' (arm64)
+Enter the number:
+3
+3 is a prime number
+Process 46911 exited with status = 0 (0x00000000) 
+(lldb) log enable lldb default -f problem03.log
+(lldb) b main
+Breakpoint 1: where = problem03`main, address = 0x0000000100003d9c
+(lldb) r
+Process 46952 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set03/problem03' (arm64)
+Process 46952 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100003d9c problem03`main
+problem03`main:
+->  0x100003d9c <+0>:  sub    sp, sp, #0x20
+    0x100003da0 <+4>:  stp    x29, x30, [sp, #0x10]
+    0x100003da4 <+8>:  add    x29, sp, #0x10
+    0x100003da8 <+12>: mov    w8, #0x0
+Target 0: (problem03) stopped.
+(lldb) s
+Process 46952 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
+    frame #0: 0x0000000100003da0 problem03`main + 4
+problem03`main:
+->  0x100003da0 <+4>:  stp    x29, x30, [sp, #0x10]
+    0x100003da4 <+8>:  add    x29, sp, #0x10
+    0x100003da8 <+12>: mov    w8, #0x0
+    0x100003dac <+16>: str    w8, [sp]
+Target 0: (problem03) stopped.
+(lldb) s
+Process 46952 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
+    frame #0: 0x0000000100003da4 problem03`main + 8
+problem03`main:
+->  0x100003da4 <+8>:  add    x29, sp, #0x10
+    0x100003da8 <+12>: mov    w8, #0x0
+    0x100003dac <+16>: str    w8, [sp]
+    0x100003db0 <+20>: stur   wzr, [x29, #-0x4]
+Target 0: (problem03) stopped.
+(lldb) s
+Process 46952 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
+    frame #0: 0x0000000100003da8 problem03`main + 12
+problem03`main:
+->  0x100003da8 <+12>: mov    w8, #0x0
+    0x100003dac <+16>: str    w8, [sp]
+    0x100003db0 <+20>: stur   wzr, [x29, #-0x4]
+    0x100003db4 <+24>: bl     0x100003f00               ; input_number
+Target 0: (problem03) stopped.
+(lldb) q
+Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] y
