@@ -1,0 +1,7 @@
+(base) hampana@Hampana set02 % gcc problem08.c                        
+problem08.c:49:74: warning: data argument not used by format string [-Wformat-extra-args]
+   printf("The smallest triangle out of triangles with base and height ",smallest.area);
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+1 warning generated.
+(base) hampana@Hampana set02 % gcc problem08.c -o problem08          
+(base) hampana@Hampana set02 % gcc -g -O0 problem08.c -o problem08.exe

@@ -1,0 +1,63 @@
+(base) hampana@Hampana set02 % gcc problem08.c                        
+problem08.c:49:74: warning: data argument not used by format string [-Wformat-extra-args]
+   printf("The smallest triangle out of triangles with base and height ",smallest.area);
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+1 warning generated.
+(base) hampana@Hampana set02 % gcc problem08.c -o problem08          
+(base) hampana@Hampana set02 % gcc -g -O0 problem08.c -o problem08.exe
+(base) hampana@Hampana set02 % lldb ./problem08                       
+(lldb) target create "./problem08"
+Current executable set to '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem08' (arm64).
+(lldb) r
+Process 72083 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem08' (arm64)
+Enter the number of triangle:3
+Enter 1 no. of triangle:
+Enter the base:1
+Enter the altitude:2
+Enter 2 no. of triangle:
+Enter the base:1
+Enter the altitude:2
+Enter 3 no. of triangle:
+Enter the base:1
+Enter the altitude:2
+The Area of 1 triangle is 1.000000
+The Area of 2 triangle is 1.000000
+The Area of 3 triangle is 1.000000
+The smallest triangle out of triangles with base and height is 1.000000 Process 72083 exited with status = 0 (0x00000000) 
+(lldb) log enable default -f problem08.log
+error: log enable takes a log channel and one or more log types.
+(lldb) b main
+Breakpoint 1: where = problem08`main, address = 0x0000000100003dec
+(lldb) r
+Process 72286 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set02/problem08' (arm64)
+Process 72286 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100003dec problem08`main
+problem08`main:
+->  0x100003dec <+0>:  stp    x28, x27, [sp, #-0x20]!
+    0x100003df0 <+4>:  stp    x29, x30, [sp, #0x10]
+    0x100003df4 <+8>:  add    x29, sp, #0x10
+    0x100003df8 <+12>: sub    sp, sp, #0x4f0
+Target 0: (problem08) stopped.
+(lldb) s
+Process 72286 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
+    frame #0: 0x0000000100003df0 problem08`main + 4
+problem08`main:
+->  0x100003df0 <+4>:  stp    x29, x30, [sp, #0x10]
+    0x100003df4 <+8>:  add    x29, sp, #0x10
+    0x100003df8 <+12>: sub    sp, sp, #0x4f0
+    0x100003dfc <+16>: adrp   x8, 1
+Target 0: (problem08) stopped.
+(lldb) s
+Process 72286 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = instruction step into
+    frame #0: 0x0000000100003df4 problem08`main + 8
+problem08`main:
+->  0x100003df4 <+8>:  add    x29, sp, #0x10
+    0x100003df8 <+12>: sub    sp, sp, #0x4f0
+    0x100003dfc <+16>: adrp   x8, 1
+    0x100003e00 <+20>: ldr    x8, [x8, #0x8]
+Target 0: (problem08) stopped.
+(lldb) q
+Quitting LLDB will kill one or more processes. Do you really want to proceed: [Y/n] y
