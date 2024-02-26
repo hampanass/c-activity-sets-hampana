@@ -1,0 +1,14 @@
+(base) hampana@Hampana set03 % gcc problem04.c -o problem04          
+(base) hampana@Hampana set03 % gcc -g -O0 problem04.c -o problem04.exe
+(base) hampana@Hampana set03 % lldb ./problem04                       
+(lldb) target create "./problem04"
+Current executable set to '/Users/hampana/Documents/c-activity-sets-hampana/set03/problem04' (arm64).
+(lldb) r
+Process 60535 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set03/problem04' (arm64)
+Enter the number:5
+the 2 number:1
+the 3 number:1
+the 4 number:2
+the 5 number:3
+fibo(5)= 5
+Process 60535 exited with status = 0 (0x00000000) 

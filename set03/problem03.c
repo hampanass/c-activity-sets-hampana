@@ -23,11 +23,12 @@ int input_number()
 
 int is_prime(int n)
 {
-    if (n <= 2)
+     //the condition is to check  the input number is not 1,since 1 is not prime
+    if (n <= 1)
     {
         return 0;
     }
-
+    
     for(int i = 2; i * i <= n; i++)
     {
         if(n % i == 0)
