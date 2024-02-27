@@ -6,5 +6,11 @@ void output(int n, int a[n]);
 
 int main()
 {
-    
+  int n = input_array_size();
+  int a[10000];
+  init_array(n,a);
+  eratosthenes_sieve(n,a);
+  output(n,a);
+  return 0;
 }
+
