@@ -21,3 +21,5 @@ int input_array_size()
     scanf("%d",&n);
     return n;
 }
+
+void init_array(int n, int a[n])
