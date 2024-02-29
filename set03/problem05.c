@@ -22,14 +22,14 @@ int input_array_size()
     return n;
 }
 
-void init_array(int n, int a[])
+void init_array(int n, int a[n])
 {
   for(int i = 2;i<=n;i++){
     a[i] = 1;
   }
 }
 
-void erotosthenes_sieve(int n, int a[])
+void erotosthenes_sieve(int n, int a[n])
 {
   for(int i =2;i*1 <=n;i++){
     if(a[i]){
@@ -40,7 +40,7 @@ void erotosthenes_sieve(int n, int a[])
   }
 }
 
-void output(int n, int a[])
+void output(int n, int a[n])
 {
   printf("The prime numbers between 2 and %d are:\n",n);
   for(int i=2; i<=n;i++){
