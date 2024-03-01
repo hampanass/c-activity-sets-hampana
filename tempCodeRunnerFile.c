@@ -1,6 +1,6 @@
-#include<stdio.h>
-struct _complex {
-	float real;
+#include <stdio.h>
+struct _complex{
+    float real;
     float imaginary;
 };
 typedef struct _complex Complex;
@@ -11,6 +11,7 @@ void input_n_complex(int n, Complex c[n]);
 Complex add(Complex a, Complex b);
 Complex add_n_complex(int n, Complex c[n]);
 void output(int n, Complex c[n], Complex result);
+
 
 int main()
 {
@@ -23,31 +24,34 @@ int main()
     output(n,c,result);
     return 0;
 }
-int get_n()
 
+int get_n()
 {
     int x;
-    printf("Enter the number of complex numbers:");
+    printf("Enter the number of Complex Numbers:");
     scanf("%d",&x);
     return x;
 }
+
 Complex input_complex()
 {
     Complex c;
-    printf("Enter the real part: ");
+    printf("Enter the real part:");
     scanf("%f",&c.real);
-    printf("Enter the imaginary part: ");
+    printf("Enter the imaginary part:");
     scanf("%f",&c.imaginary);
     return c;
 }
+
 void input_n_complex(int n, Complex c[n])
 {
-    for(int i=0;i<n;i++)
+    for(int i=1;i<=n;i++)
     {
-        printf("Complex No. %d\n",i+1);
+        printf("Complex no %d:\n",i);
         c[i]=input_complex();
     }
 }
+
 Complex add(Complex a, Complex b)
 {
     Complex result;
@@ -55,16 +59,19 @@ Complex add(Complex a, Complex b)
     result.imaginary=a.imaginary+b.imaginary;
     return result;
 }
+
 Complex add_n_complex(int n, Complex c[n])
 {
-    Complex sum=c[0];
-    for(int i=1;i<n;i++)
+    Complex sum;
+    for(int i=1;i<=n;i++)
     {
         sum=add(c[i],sum);
     }
     return sum;
 }
+
 void output(int n, Complex c[n], Complex result)
 {
-    printf("Sum of the %d complex numbers is %.2f+i%.2f",n,result.real,result.imaginary);
+    printf("The sum of %d Complex Numbers is %f+i%f:\n",n,result.real,result.imaginary);
 }
+
