@@ -14,5 +14,8 @@ int main()
 
 void input_string(char* a, char* b)
 {
-    
+    printf("Enter the string a:\n");
+    scanf("%s",a);
+    printf("Enter the string b:\n");
+    scanf("%s",b);
 }
