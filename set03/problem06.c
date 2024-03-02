@@ -11,3 +11,8 @@ int main()
     output(a,b,index);
     return 0;
 }
+
+void input_string(char* a, char* b)
+{
+    
+}
