@@ -19,3 +19,8 @@ void input_string(char* a, char* b)
     printf("Enter the string b:\n");
     scanf("%s",b);
 }
+
+int sub_str_index(char* string, char* substring)
+{
+    
+}
