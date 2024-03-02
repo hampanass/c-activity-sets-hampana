@@ -1,0 +1,1057 @@
+ Processing command: b main
+ HandleCommand, cmd_obj : '_regexp-break'
+ HandleCommand, (revised) command_string: '_regexp-break main'
+ HandleCommand, wants_raw_input:'True'
+ HandleCommand, command line after removing command name(s): 'main'
+ Processing command: breakpoint set --name 'main'
+ HandleCommand, cmd_obj : 'breakpoint set'
+ HandleCommand, (revised) command_string: 'breakpoint set --name 'main''
+ HandleCommand, wants_raw_input:'False'
+ HandleCommand, command line after removing command name(s): '--name 'main''
+ 0x12b6f8388 Broadcaster("lldb.target")::BroadcastEvent (event_sp = {0x101c04388 Event: broadcaster = 0x12b9dae00 (lldb.target), type = 0x00000001 (breakpoint-changed), data = {bkpt: 1 type: breakpoint added}}, unique =0) hijack = 0x0
+ Target::AddBreakpoint (internal = no) => break_id = 1: name = 'main'
+
+
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() add at addr = 0x100003e80
+ warning: Failed to add breakpoint site at 0x100003e80
+ Added location: 1.1: 
+  module = /Users/hampana/Documents/c-activity-sets-hampana/set03/problem05
+  symbol = main
+  address = 0x0000000100003e80
+  resolved = false
+  hardware = false
+  hit count = 0   
+
+
+ HandleCommand, command succeeded
+ HandleCommand, command succeeded
+ Processing command: r
+ HandleCommand, cmd_obj : 'process launch'
+ HandleCommand, (revised) command_string: 'process launch -X true --'
+ HandleCommand, wants_raw_input:'False'
+ Repeat command: 
+ HandleCommand, command line after removing command name(s): '-X true --'
+ Target::Launch() called for /Users/hampana/Documents/c-activity-sets-hampana/set03/problem05
+ Target::Launch the process exists, and its current state is exited
+ have platform=true, platform_sp->IsHost()=true, default_to_use_pty=true
+ at least one of stdin/stdout/stderr was not set, evaluating default handling
+ target stdin='(empty)', target stdout='(empty)', stderr='(empty)'
+ Generating a pty to use for stdin/out/err
+ Target::Launch asking the platform to debug the process
+ (plugin = gdb-remote status=6 (0x00000006), description="destroying when not connected to debugserver")
+ (plugin = gdb-remote) ignoring exit status because state was already set to eStateExited
+ Process::ControlPrivateStateThread (signal = 1)
+ Sending control event of type: 1.
+ Target::RemoveBreakpointByID (break_id = -3, internal = yes)
+
+ Target::DisableBreakpointByID (break_id = -3, internal = yes)
+
+ Target::DisableAllWatchpoints
+
+ Target::ClearAllWatchpointHitCounts
+
+ Target::ClearAllWatchpointHistoricValues
+
+ Host::StartMonitoringChildProcess(callback, pid=35295) source = 0x102907f70
+
+ ::waitpid (pid = 35295, &status, 0) => pid = 35295, status = 0x00000000 (EXITED), signal = 0, exit_status = 0
+ Host::StartMonitoringChildProcess(callback, pid=35296) source = 0x12b76ab70
+
+ (plugin = gdb-remote, state = attaching, restarted = 0)
+ Host::StartMonitoringChildProcess(callback, pid=35297) source = 0x12b780dd0
+
+ thread created
+ Process::AttachCompletionHandler::AttachCompletionHandler process=0x12c191200, exec_count=0
+ Process::ControlPrivateStateThread (signal = 4)
+ thread created
+ Sending control event of type: 4.
+ Process::RunPrivateStateThread (arg = 0x12c191200, pid = 35296) thread starting...
+ timeout = <infinite>, event_sp)...
+ Process::RunPrivateStateThread (arg = 0x12c191200, pid = 35296) got a control event: 4
+ timeout = <infinite>, event_sp)...
+ thread created
+ timeout = <infinite>
+ timeout = <infinite>, event_sp)...
+ (plugin = gdb-remote, state = stopped)
+ (plugin = gdb-remote, state = stopped, stop_id = 1
+ Process::AttachCompletionHandler::PerformAction called with state stopped (5)
+ Discarding thread plans for thread (tid = 0xa2a79, force 1)
+ Thread::PushPlan(0x0x101ddce38): "Base thread plan.", tid = 0xa2a79.
+ Process::AttachCompletionHandler::PerformAction state stopped: no more execs expected to start, continuing with attach
+ Process::CompleteAttach()
+ Setting Process code address mask to 0xffff800000000000
+ Setting Process data address mask to 0xffff800000000000
+ Target::SetArchitecture merging compatible arch; arch is now arm64 (arm64-apple-macosx14.0.0)
+ Process::CompleteAttach replacing process architecture with DidAttach() architecture: arm64e-apple-macosx-
+ DynamicLoaderDarwin::UseDYLDSPI: Use new DynamicLoader plugin
+ DynamicLoaderDarwin::UseDYLDSPI: Use new DynamicLoader plugin
+ Unloaded:
+ DynamicLoaderDarwin::UnloadAllImages[0] BB208E10-E97B-3DC4-A8CB-763825268F89 (arm64) "/Users/hampana/Documents/c-activity-sets-hampana/set03/problem05"
+ DynamicLoaderDarwin::UnloadAllImages[1] 50746901-DB0E-39A0-B391-BAAA6B82AD0F (arm64e) "/usr/lib/dyld"
+ DynamicLoaderDarwin::UnloadAllImages[2] 68092300-D766-369D-8407-BF255E29E70F (arm64e) "/usr/lib/libSystem.B.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[3] 2FD588CE-4B3E-30C3-98D0-77B748F64972 (arm64e) "/usr/lib/system/libcache.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[4] 02516353-E773-3B1E-8B5E-EEE35F336394 (arm64e) "/usr/lib/system/libcommonCrypto.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[5] 017AE3FD-51D3-3724-9A6A-6E8DC106A0E3 (arm64e) "/usr/lib/system/libcompiler_rt.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[6] 4DD7ACBE-4435-34D5-BEB0-7C2E8C613E78 (arm64e) "/usr/lib/system/libcopyfile.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[7] FA157EF5-193D-3328-B9D6-FCF7A6A05F30 (arm64e) "/usr/lib/system/libcorecrypto.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[8] 5AA1649C-EF1D-39F7-A66C-4C5D2E53C474 (arm64e) "/usr/lib/system/libdispatch.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[9] E5CCF5F1-9A99-35E7-BDBD-CB2D37678EA7 (arm64e) "/usr/lib/system/libdyld.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[10] 4A948E99-EE03-3A40-A3F7-3AD957431D4D (arm64e) "/usr/lib/system/libkeymgr.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[11] 961E2405-896A-3684-A4F2-A42D3643C1A8 (arm64e) "/usr/lib/system/libmacho.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[12] B2EA6DAE-0575-3CEC-B5DF-4ED697210418 (arm64e) "/usr/lib/system/libquarantine.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[13] D7AA3DBF-49C4-3211-BF5F-73E43FFC0D0D (arm64e) "/usr/lib/system/libremovefile.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[14] 3DEC29CF-6C9F-3E68-858C-1315AD424965 (arm64e) "/usr/lib/system/libsystem_asl.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[15] 08C06922-716A-33C5-8DC0-C553E9884D4D (arm64e) "/usr/lib/system/libsystem_blocks.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[16] CC7A439E-F104-3047-995C-9A5A3CC4A442 (arm64e) "/usr/lib/system/libsystem_c.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[17] A1528C13-7072-3AD5-9F3D-6EBCAFA3BBD8 (arm64e) "/usr/lib/system/libsystem_collections.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[18] AE8816C7-B7E5-369B-BEBD-AF4E936DE727 (arm64e) "/usr/lib/system/libsystem_configuration.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[19] 62ED29C9-EC32-31F6-9457-CC04A8F0F134 (arm64e) "/usr/lib/system/libsystem_containermanager.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[20] D795E42D-9766-35C6-A093-E9CF7E896C8B (arm64e) "/usr/lib/system/libsystem_coreservices.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[21] 34DF5BC7-2B49-3642-AEE7-B68180FCA26D (arm64e) "/usr/lib/system/libsystem_darwin.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[22] 7652DD82-27A4-371B-ACC6-57DFA971FC98 (arm64e) "/usr/lib/system/libsystem_darwindirectory.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[23] F1C4DE88-AB59-3D92-A94C-3C00E2A4A57D (arm64e) "/usr/lib/system/libsystem_dnssd.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[24] E52FAB77-7424-3679-864F-350DE6B07098 (arm64e) "/usr/lib/system/libsystem_featureflags.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[25] 94F4C112-C039-37F3-9956-C05CA70E4B04 (arm64e) "/usr/lib/system/libsystem_info.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[26] 06608DC1-58D9-3795-BE74-84D9737D1659 (arm64e) "/usr/lib/system/libsystem_m.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[27] FAA92B9B-9273-3C30-BB9E-36346ECA2FAF (arm64e) "/usr/lib/system/libsystem_malloc.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[28] ED3AC279-A020-3E28-9BA5-970455B5C81F (arm64e) "/usr/lib/system/libsystem_networkextension.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[29] 0E24E20B-61F4-3B59-956D-D31845BAF6F6 (arm64e) "/usr/lib/system/libsystem_notify.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[30] 5E8EB785-5F0D-3D8F-B75A-33A12831CA80 (arm64e) "/usr/lib/system/libsystem_sandbox.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[31] 0A37B0C4-518F-343B-9542-299958362705 (arm64e) "/usr/lib/system/libsystem_secinit.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[32] A7228B5D-53C7-3FE9-84E4-2A8C04DCF051 (arm64e) "/usr/lib/system/libsystem_kernel.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[33] 785BF993-F73B-36C1-A5BA-CCCE6C6DA879 (arm64e) "/usr/lib/system/libsystem_platform.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[34] 449BBAD3-F7EF-371D-9A59-FD4FFA78289B (arm64e) "/usr/lib/system/libsystem_pthread.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[35] 8CC1A170-0335-3592-B3EE-DA7442D0A4C8 (arm64e) "/usr/lib/system/libsystem_symptoms.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[36] D243654E-BD35-337C-9714-B0B462FA20CA (arm64e) "/usr/lib/system/libsystem_trace.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[37] B63F6CC1-47F9-34D0-A6A7-8B4C8B6389DB (arm64e) "/usr/lib/system/libunwind.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[38] 147EA529-CECC-34FB-8250-B2A3893D3C3E (arm64e) "/usr/lib/system/libxpc.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[39] C8FC8E27-F2CD-3CD7-9933-19E10526F012 (arm64e) "/usr/lib/libc++abi.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[40] 375F98A8-1D18-3DA7-92A3-B7964847B03A (arm64e) "/usr/lib/libobjc.A.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[41] 4EE22D95-227B-3599-9B05-C4403E0DEB4F (arm64e) "/usr/lib/liboah.dylib"
+ DynamicLoaderDarwin::UnloadAllImages[42] F9B004FE-F1D6-307E-B399-568B8AC0CB6F (arm64e) "/usr/lib/libc++.1.dylib"
+ Breakpoint::ModulesChanged: num_modules: 43 load: 0 delete_locations: 0
+
+ 0x12b6f8388 Broadcaster("lldb.target")::BroadcastEvent (event_sp = {0x102a1ea18 Event: broadcaster = 0x12b9dae00 (lldb.target), type = 0x00000001 (breakpoint-changed), data = {bkpt: 1 type: locations removed}}, unique =0) hijack = 0x0
+ Initial module fetch:  Adding 2 modules.
+
+ Found executable module: /Users/hampana/Documents/c-activity-sets-hampana/set03/problem05
+ Found dyld module: /usr/lib/dyld
+ Adding new image at address=0x000000010000c000.
+ address=0x000000010000c000 uuid=50746901-DB0E-39A0-B391-BAAA6B82AD0F path='/usr/lib/dyld'
+ 		          __TEXT [0x000000010000c000 - 0x00000001000a4000) slide = 0x10000c000
+ 		    __DATA_CONST [0x00000001000a4000 - 0x00000001000ac000) slide = 0x10000c000
+ 		          __DATA [0x00000001000ac000 - 0x00000001000b0000) slide = 0x10000c000
+ 		    __DATA_DIRTY [0x00000001000b0000 - 0x00000001000b4000) slide = 0x10000c000
+ 		      __LINKEDIT [0x00000001000b4000 - 0x0000000100110000) slide = 0x10000c000
+ Adding new image at address=0x0000000100000000.
+ address=0x0000000100000000 uuid=BB208E10-E97B-3DC4-A8CB-763825268F89 path='/Users/hampana/Documents/c-activity-sets-hampana/set03/problem05'
+ 		      __PAGEZERO [0x0000000000000000 - 0x0000000100000000)
+ 		          __TEXT [0x0000000100000000 - 0x0000000100004000)
+ 		    __DATA_CONST [0x0000000100004000 - 0x0000000100008000)
+ 		      __LINKEDIT [0x0000000100008000 - 0x000000010000c000)
+ DynamicLoaderDarwin::ModulesDidLoad[0] 50746901-DB0E-39A0-B391-BAAA6B82AD0F (arm64e) "/usr/lib/dyld"
+ DynamicLoaderDarwin::ModulesDidLoad[1] BB208E10-E97B-3DC4-A8CB-763825268F89 (arm64) "/Users/hampana/Documents/c-activity-sets-hampana/set03/problem05"
+ Breakpoint::ModulesChanged: num_modules: 2 load: 1 delete_locations: 0
+
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() add at addr = 0x100003e80
+ 0x12b6f8388 Broadcaster("lldb.target")::BroadcastEvent (event_sp = {0x12b75e458 Event: broadcaster = 0x12b9dae00 (lldb.target), type = 0x00000001 (breakpoint-changed), data = {bkpt: 1 type: locations resolved}}, unique =0) hijack = 0x0
+ Target::AddBreakpoint (internal = yes) => break_id = -4: name = 'lldb_image_notifier', module = dyld
+
+
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() add at addr = 0x100057414
+ after DynamicLoader::DidAttach(), target executable is /Users/hampana/Documents/c-activity-sets-hampana/set03/problem05 (using macos-dyld plugin)
+ after SystemRuntime::DidAttach(), target executable is /Users/hampana/Documents/c-activity-sets-hampana/set03/problem05 (using systemruntime-macosx plugin)
+ Ran next event action, result was 0.
+ 0x101ddce38: tid = 0xa2a79: stop info = <NULL> (stop_id = 1)
+ 0x101ddce38: tid = 0xa2a79: stop info = signal SIGSTOP (stop_id = 1)
+ 
+ ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
+ Thread::ShouldStop(0x101ddce38) for tid = 0xa2a79 0xa2a79, pc = 0x0000000100010b70
+ ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
+ Plan stack initial state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+
+ Base plan discarding thread plans for thread tid = 0xa2a79 (signal: signal SIGSTOP)
+ Discarding thread plans for thread (tid = 0xa2a79, force 0)
+ Base plan says should stop: 1.
+ Plan stack final state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+
+ vvvvvvvv Thread::ShouldStop End (returning 1) vvvvvvvv
+ ThreadList::ShouldStop overall should_stop = 1
+ Process::ShouldBroadcastEvent (0x101daa370) => new state: stopped, last broadcast state: stopped - YES
+ Process::HandlePrivateEvent (pid = 35296) broadcasting new state stopped (old state stopped) to hijacked
+ timeout = <infinite>, event_sp)...
+ (plugin = gdb-remote, state = stopped, restarted = 0)
+ (plugin = gdb-remote, state = stopped) -- unlocking run lock
+ timeout = <infinite>, event_sp) => stopped
+ (plugin = gdb-remote) -- locking run lock
+ Process::PrivateResume() m_stop_id = 1, public state: stopped private state: stopped
+ WillResume Thread #1 (0x0x101ddce38): tid = 0xa2a79, pc = 0x100010b70, sp = 0x16fdff2a0, fp = 0x00000000, plan = 'base plan', state = running, stop others = 0
+ (plugin = gdb-remote, state = running)
+ Process thinks the process has resumed.
+ Current Plan for thread 1(0x101ddce38) (0xa2a79, running): base plan being asked whether we should report run.
+ Process::ShouldBroadcastEvent (0x101de13c0) => new state: running, last broadcast state: running - YES
+ Process::HandlePrivateEvent (pid = 35296) broadcasting new state running (old state running) to public
+ Process::PushProcessIOHandler pushing IO handler
+ Process::HandlePrivateEvent updated m_iohandler_sync to 1
+ timeout = <infinite>, event_sp)...
+ waited from m_iohandler_sync to change from 0. New value is 1.
+ (plugin = gdb-remote, state = running, restarted = 0)
+ HandleCommand, command succeeded
+ Went to stop the private state thread, but it was already invalid.
+ (plugin = gdb-remote, state = stopped)
+ (plugin = gdb-remote, state = stopped, stop_id = 2
+ 0x101ddce38: tid = 0xa2a79: stop info = <NULL> (stop_id = 2)
+ 0x101ddce38: tid = 0xa2a79: stop info = shared-library-event (stop_id = 2)
+ 
+ ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
+ Thread::ShouldStop(0x101ddce38) for tid = 0xa2a79 0xa2a79, pc = 0x0000000100057414
+ ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
+ Plan stack initial state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+
+ Target::RemoveBreakpointByID (break_id = -4, internal = yes)
+
+ Target::DisableBreakpointByID (break_id = -4, internal = yes)
+
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() remove at addr = 0x100057414
+ Unloaded:
+ DynamicLoaderDarwin::UnloadAllImages[0] BB208E10-E97B-3DC4-A8CB-763825268F89 (arm64) "/Users/hampana/Documents/c-activity-sets-hampana/set03/problem05"
+ Breakpoint::ModulesChanged: num_modules: 1 load: 0 delete_locations: 0
+
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() remove at addr = 0x100003e80
+ 0x12b6f8388 Broadcaster("lldb.target")::BroadcastEvent (event_sp = {0x101dedf38 Event: broadcaster = 0x12b9dae00 (lldb.target), type = 0x00000001 (breakpoint-changed), data = {bkpt: 1 type: locations removed}}, unique =0) hijack = 0x0
+ Target::AddBreakpoint (internal = yes) => break_id = -5: address = 0x0000000185732414
+
+
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() add at addr = 0x185732414
+ Hit breakpoint location: -4.1: 
+  module = /usr/lib/dyld
+  symbol = lldb_image_notifier
+  address = dyld[0x0000000180102414]
+  resolved = false
+  hardware = false
+  hit count = 1   
+, continuing.
+
+ StopInfo::ShouldStop async callback says we should not stop, returning ShouldStop of false.
+ ThreadList::ShouldStop overall should_stop = 0
+ ThreadList::ShouldReportStop 1 threads
+ Thread::ShouldReportStop() tid = 0xa2a79: returning vote 0 for current plan
+ Returning no opinion
+ Process::ShouldBroadcastEvent: should_resume: 1 state: stopped was_restarted: 0 report_stop_vote: 0.
+ Process::ShouldBroadcastEvent (0x12b6f79b0) Restarting process from state: stopped
+ Process::PrivateResume() m_stop_id = 2, public state: running private state: stopped
+ WillResume Thread #1 (0x0x101ddce38): tid = 0xa2a79, pc = 0x100057414, sp = 0x16fdff010, fp = 0x16fdff060, plan = 'base plan', state = running, stop others = 0
+ (plugin = gdb-remote, state = running)
+ Process thinks the process has resumed.
+ Process::ShouldBroadcastEvent (0x12b6f79b0) => new state: stopped, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 35296) suppressing state stopped (old state running): should_broadcast == false
+ timeout = <infinite>, event_sp)...
+ Process::ShouldBroadcastEvent (0x101da8a90) => new state: running, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 35296) suppressing state running (old state running): should_broadcast == false
+ timeout = <infinite>, event_sp)...
+ (plugin = gdb-remote, state = stopped)
+ (plugin = gdb-remote, state = stopped, stop_id = 3
+ 0x101ddce38: tid = 0xa2a79: stop info = <NULL> (stop_id = 3)
+ 0x101ddce38: tid = 0xa2a79: stop info =  (stop_id = 3)
+ 
+ ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
+ Thread::ShouldStop(0x101ddce38) for tid = 0xa2a79 0xa2a79, pc = 0x0000000185732414
+ ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
+ Plan stack initial state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+
+ Target::RemoveBreakpointByID (break_id = -5, internal = yes)
+
+ Target::DisableBreakpointByID (break_id = -5, internal = yes)
+
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() remove at addr = 0x185732414
+ Initial module fetch:  Adding 2 modules.
+
+ Found executable module: /Users/hampana/Documents/c-activity-sets-hampana/set03/problem05
+ Found dyld module: /usr/lib/dyld
+ Adding new image at address=0x00000001856e7000.
+ address=0x00000001856e7000 uuid=50746901-DB0E-39A0-B391-BAAA6B82AD0F path='/usr/lib/dyld'
+ 		          __TEXT [0x00000001856e7000 - 0x000000018577b388) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001e01d5bd0 - 0x00000001e01db380) slide = 0x5630000
+ 		          __DATA [0x00000001dc7cfd00 - 0x00000001dc7d28cc) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc339a00 - 0x00000001dc33b560) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000100000000.
+ address=0x0000000100000000 uuid=BB208E10-E97B-3DC4-A8CB-763825268F89 path='/Users/hampana/Documents/c-activity-sets-hampana/set03/problem05'
+ 		      __PAGEZERO [0x0000000000000000 - 0x0000000100000000)
+ 		          __TEXT [0x0000000100000000 - 0x0000000100004000)
+ 		    __DATA_CONST [0x0000000100004000 - 0x0000000100008000)
+ 		      __LINKEDIT [0x0000000100008000 - 0x000000010000c000)
+ DynamicLoaderDarwin::ModulesDidLoad[0] 50746901-DB0E-39A0-B391-BAAA6B82AD0F (arm64e) "/usr/lib/dyld"
+ DynamicLoaderDarwin::ModulesDidLoad[1] BB208E10-E97B-3DC4-A8CB-763825268F89 (arm64) "/Users/hampana/Documents/c-activity-sets-hampana/set03/problem05"
+ Breakpoint::ModulesChanged: num_modules: 2 load: 1 delete_locations: 0
+
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() add at addr = 0x100003e80
+ 0x12b6f8388 Broadcaster("lldb.target")::BroadcastEvent (event_sp = {0x12c8461a8 Event: broadcaster = 0x12b9dae00 (lldb.target), type = 0x00000001 (breakpoint-changed), data = {bkpt: 1 type: locations resolved}}, unique =0) hijack = 0x0
+ Target::AddBreakpoint (internal = yes) => break_id = -6: name = 'lldb_image_notifier', module = dyld
+
+
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() add at addr = 0x185732414
+ Hit breakpoint location: -5.1: 
+  address = 0x0000000185732414
+  resolved = false
+  hardware = false
+  hit count = 1   
+, continuing.
+
+ StopInfo::ShouldStop async callback says we should not stop, returning ShouldStop of false.
+ ThreadList::ShouldStop overall should_stop = 0
+ ThreadList::ShouldReportStop 1 threads
+ Thread::ShouldReportStop() tid = 0xa2a79: returning vote 0 for current plan
+ Returning no opinion
+ Process::ShouldBroadcastEvent: should_resume: 1 state: stopped was_restarted: 0 report_stop_vote: 0.
+ Process::ShouldBroadcastEvent (0x101da8a90) Restarting process from state: stopped
+ Process::PrivateResume() m_stop_id = 3, public state: running private state: stopped
+ Thread::PushPlan(0x0x101ddce38): "Single stepping past breakpoint site 9 at 0x185732414", tid = 0xa2a79.
+ WillResume Thread #1 (0x0x101ddce38): tid = 0xa2a79, pc = 0x185732414, sp = 0x16fdfef00, fp = 0x16fdff060, plan = 'Step over breakpoint trap', state = stepping, stop others = 1
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() remove at addr = 0x185732414
+ (plugin = gdb-remote, state = running)
+ Process thinks the process has resumed.
+ Process::ShouldBroadcastEvent (0x101da8a90) => new state: stopped, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 35296) suppressing state stopped (old state running): should_broadcast == false
+ timeout = <infinite>, event_sp)...
+ Process::ShouldBroadcastEvent (0x101dec080) => new state: running, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 35296) suppressing state running (old state running): should_broadcast == false
+ timeout = <infinite>, event_sp)...
+ (plugin = gdb-remote, state = stopped)
+ (plugin = gdb-remote, state = stopped, stop_id = 4
+ 0x101ddce38: tid = 0xa2a79: stop info = <NULL> (stop_id = 4)
+ 0x101ddce38: tid = 0xa2a79: stop info = trace (stop_id = 4)
+ 
+ ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
+ Thread::ShouldStop(0x101ddce38) for tid = 0xa2a79 0xa2a79, pc = 0x0000000185732418
+ ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
+ Plan stack initial state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+      Element 1: Single stepping past breakpoint site 9 at 0x185732414
+
+ Step over breakpoint stopped for reason: trace.
+ Plan Step over breakpoint trap should stop: 0.
+ Completed step over breakpoint plan.
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() add at addr = 0x185732414
+ Plan Step over breakpoint trap auto-continue: true.
+ Popping plan: "Step over breakpoint trap", tid = 0xa2a79.
+ Plan stack final state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+    Completed plan stack:
+      Element 0: Single stepping past breakpoint site 9 at 0x185732414
+
+ vvvvvvvv Thread::ShouldStop End (returning 0) vvvvvvvv
+ ThreadList::ShouldStop overall should_stop = 0
+ ThreadList::ShouldReportStop 1 threads
+ Thread::ShouldReportStop() tid = 0xa2a79: returning vote for complete stack's back plan
+ Returning vote: no
+ Returning no
+ Process::ShouldBroadcastEvent: should_resume: 1 state: stopped was_restarted: 0 report_stop_vote: -1.
+ Process::ShouldBroadcastEvent (0x12b76fe20) Restarting process from state: stopped
+ Process::PrivateResume() m_stop_id = 4, public state: running private state: stopped
+ WillResume Thread #1 (0x0x101ddce38): tid = 0xa2a79, pc = 0x185732418, sp = 0x16fdfef00, fp = 0x16fdff060, plan = 'base plan', state = running, stop others = 0
+ (plugin = gdb-remote, state = running)
+ Process thinks the process has resumed.
+ Process::ShouldBroadcastEvent (0x12b76fe20) => new state: stopped, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 35296) suppressing state stopped (old state running): should_broadcast == false
+ timeout = <infinite>, event_sp)...
+ Process::ShouldBroadcastEvent (0x12b75e6f0) => new state: running, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 35296) suppressing state running (old state running): should_broadcast == false
+ timeout = <infinite>, event_sp)...
+ (plugin = gdb-remote, state = stopped)
+ (plugin = gdb-remote, state = stopped, stop_id = 5
+ 0x101ddce38: tid = 0xa2a79: stop info = <NULL> (stop_id = 5)
+ 0x101ddce38: tid = 0xa2a79: stop info = shared-library-event (stop_id = 5)
+ 
+ ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
+ Thread::ShouldStop(0x101ddce38) for tid = 0xa2a79 0xa2a79, pc = 0x0000000185732414
+ ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
+ Plan stack initial state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+
+ Adding 41 modules.
+ Adding new image at address=0x000000019231a000.
+ address=0x000000019231a000 uuid=68092300-D766-369D-8407-BF255E29E70F path='/usr/lib/libSystem.B.dylib'
+ 		          __TEXT [0x000000019231a000 - 0x000000019231c000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90ddc00 - 0x00000001d90ddc10) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e1121618 - 0x00000001e11218f0) slide = 0x5630000
+ 		          __AUTH [0x00000001dc955a50 - 0x00000001dc955a58) slide = 0x5630000
+ 		          __DATA [0x00000001db36da10 - 0x00000001db36da18) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000192314000.
+ address=0x0000000192314000 uuid=2FD588CE-4B3E-30C3-98D0-77B748F64972 path='/usr/lib/system/libcache.dylib'
+ 		          __TEXT [0x0000000192314000 - 0x000000019231a000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90ddb58 - 0x00000001d90ddc00) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e1121540 - 0x00000001e1121618) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x00000001922cf000.
+ address=0x00000001922cf000 uuid=02516353-E773-3B1E-8B5E-EEE35F336394 path='/usr/lib/system/libcommonCrypto.dylib'
+ 		          __TEXT [0x00000001922cf000 - 0x00000001922dcff8) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90dcb70 - 0x00000001d90dd310) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e111f5e0 - 0x00000001e1120410) slide = 0x5630000
+ 		          __AUTH [0x00000001dc955a30 - 0x00000001dc955a50) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x00000001922fb000.
+ address=0x00000001922fb000 uuid=017AE3FD-51D3-3724-9A6A-6E8DC106A0E3 path='/usr/lib/system/libcompiler_rt.dylib'
+ 		          __TEXT [0x00000001922fb000 - 0x00000001922ff000) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e1120ce8 - 0x00000001e1120d48) slide = 0x5630000
+ 		          __DATA [0x00000001db36c9a0 - 0x00000001db36d9a0) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x00000001922f1000.
+ address=0x00000001922f1000 uuid=4DD7ACBE-4435-34D5-BEB0-7C2E8C613E78 path='/usr/lib/system/libcopyfile.dylib'
+ 		          __TEXT [0x00000001922f1000 - 0x00000001922faff4) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90dd668 - 0x00000001d90dda48) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e1120888 - 0x00000001e1120ce8) slide = 0x5630000
+ 		          __DATA [0x00000001db36c990 - 0x00000001db36c9a0) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x00000001857e3000.
+ address=0x00000001857e3000 uuid=FA157EF5-193D-3328-B9D6-FCF7A6A05F30 path='/usr/lib/system/libcorecrypto.dylib'
+ 		          __TEXT [0x00000001857e3000 - 0x0000000185881fe0) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d902c000 - 0x00000001d902cf10) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e01e3680 - 0x00000001e01e5298) slide = 0x5630000
+ 		          __AUTH [0x00000001dc7d2a88 - 0x00000001dc7d2b28) slide = 0x5630000
+ 		          __DATA [0x00000001db1a8590 - 0x00000001db1b08f0) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc33c708 - 0x00000001dc33c7e0) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x00000001858b9000.
+ address=0x00000001858b9000 uuid=5AA1649C-EF1D-39F7-A66C-4C5D2E53C474 path='/usr/lib/system/libdispatch.dylib'
+ 		          __TEXT [0x00000001858b9000 - 0x0000000185900000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001e01e5b80 - 0x00000001e01f9eb0) slide = 0x5630000
+ 		          __DATA [0x00000001dc7dc000 - 0x00000001dc7dd3a0) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc33ca00 - 0x00000001dc340428) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000185a74000.
+ address=0x0000000185a74000 uuid=E5CCF5F1-9A99-35E7-BDBD-CB2D37678EA7 path='/usr/lib/system/libdyld.dylib'
+ 		          __TEXT [0x0000000185a74000 - 0x0000000185a99ff4) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d9031aa8 - 0x00000001d9031ee8) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e0200378 - 0x00000001e0200fe0) slide = 0x5630000
+ 		          __AUTH [0x00000001dc7e05d0 - 0x00000001dc7e0620) slide = 0x5630000
+ 		          __DATA [0x00000001db1cc048 - 0x00000001db1cc0b8) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc34d838 - 0x00000001dc34d858) slide = 0x5630000
+ 		  __SHARED_CACHE [0x00000001db1cc0b8 - 0x00000001db1cc0b8) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x000000019230a000.
+ address=0x000000019230a000 uuid=4A948E99-EE03-3A40-A3F7-3AD957431D4D path='/usr/lib/system/libkeymgr.dylib'
+ 		          __TEXT [0x000000019230a000 - 0x000000019230affc) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90ddad0 - 0x00000001d90ddae0) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e11212d8 - 0x00000001e1121358) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x00000001922a7000.
+ address=0x00000001922a7000 uuid=961E2405-896A-3684-A4F2-A42D3643C1A8 path='/usr/lib/system/libmacho.dylib'
+ 		          __TEXT [0x00000001922a7000 - 0x00000001922aeffc) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90dc3f0 - 0x00000001d90dcb38) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e111f458 - 0x00000001e111f4c8) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x000000019183d000.
+ address=0x000000019183d000 uuid=B2EA6DAE-0575-3CEC-B5DF-4ED697210418 path='/usr/lib/system/libquarantine.dylib'
+ 		          __TEXT [0x000000019183d000 - 0x000000019183fffc) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90d7b90 - 0x00000001d90d7be0) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e0fa6648 - 0x00000001e0fa6768) slide = 0x5630000
+ 		          __DATA [0x00000001db359288 - 0x00000001db359298) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000192307000.
+ address=0x0000000192307000 uuid=D7AA3DBF-49C4-3211-BF5F-73E43FFC0D0D path='/usr/lib/system/libremovefile.dylib'
+ 		          __TEXT [0x0000000192307000 - 0x0000000192309ffc) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90ddac0 - 0x00000001d90ddad0) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e1121158 - 0x00000001e11212d8) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x000000018b151000.
+ address=0x000000018b151000 uuid=3DEC29CF-6C9F-3E68-858C-1315AD424965 path='/usr/lib/system/libsystem_asl.dylib'
+ 		          __TEXT [0x000000018b151000 - 0x000000018b169000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d9055918 - 0x00000001d9055f38) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e08f4d10 - 0x00000001e08f5758) slide = 0x5630000
+ 		          __DATA [0x00000001db2993a8 - 0x00000001db2994b8) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc39bfc0 - 0x00000001dc39c11c) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x000000018577c000.
+ address=0x000000018577c000 uuid=08C06922-716A-33C5-8DC0-C553E9884D4D path='/usr/lib/system/libsystem_blocks.dylib'
+ 		          __TEXT [0x000000018577c000 - 0x0000000185780ff9) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001e01db380 - 0x00000001e01db6f0) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e01db6f0 - 0x00000001e01db8c0) slide = 0x5630000
+ 		          __DATA [0x00000001db1a75e0 - 0x00000001db1a75f8) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc33b560 - 0x00000001dc33b758) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000185903000.
+ address=0x0000000185903000 uuid=CC7A439E-F104-3047-995C-9A5A3CC4A442 path='/usr/lib/system/libsystem_c.dylib'
+ 		          __TEXT [0x0000000185903000 - 0x0000000185981ffc) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d902d140 - 0x00000001d902e9c8) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e01fa030 - 0x00000001e01fa990) slide = 0x5630000
+ 		          __AUTH [0x00000001dc7dd3a0 - 0x00000001dc7de0c0) slide = 0x5630000
+ 		          __DATA [0x00000001db1b2c30 - 0x00000001db1b4db0) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc340438 - 0x00000001dc342fc0) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x00000001922ff000.
+ address=0x00000001922ff000 uuid=A1528C13-7072-3AD5-9F3D-6EBCAFA3BBD8 path='/usr/lib/system/libsystem_collections.dylib'
+ 		          __TEXT [0x00000001922ff000 - 0x0000000192303ffc) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90dda48 - 0x00000001d90dda50) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e1120d48 - 0x00000001e1120e98) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000190b19000.
+ address=0x0000000190b19000 uuid=AE8816C7-B7E5-369B-BEBD-AF4E936DE727 path='/usr/lib/system/libsystem_configuration.dylib'
+ 		          __TEXT [0x0000000190b19000 - 0x0000000190b1e000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90d4480 - 0x00000001d90d4658) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e0f2c838 - 0x00000001e0f2cb60) slide = 0x5630000
+ 		          __DATA [0x00000001db343ec0 - 0x00000001db343f81) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x000000018fb98000.
+ address=0x000000018fb98000 uuid=62ED29C9-EC32-31F6-9457-CC04A8F0F134 path='/usr/lib/system/libsystem_containermanager.dylib'
+ 		          __TEXT [0x000000018fb98000 - 0x000000018fbc1ffc) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90ad510 - 0x00000001d90ae0a8) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e0d7c5c8 - 0x00000001e0d7de90) slide = 0x5630000
+ 		          __AUTH [0x00000001dc930e38 - 0x00000001dc930fa0) slide = 0x5630000
+ 		          __DATA [0x00000001db318e98 - 0x00000001db319210) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000191f43000.
+ address=0x0000000191f43000 uuid=D795E42D-9766-35C6-A093-E9CF7E896C8B path='/usr/lib/system/libsystem_coreservices.dylib'
+ 		          __TEXT [0x0000000191f43000 - 0x0000000191f49000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90da380 - 0x00000001d90dac20) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e10cd150 - 0x00000001e10cd430) slide = 0x5630000
+ 		          __DATA [0x00000001db3623c8 - 0x00000001db362470) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000188e14000.
+ address=0x0000000188e14000 uuid=34DF5BC7-2B49-3642-AEE7-B68180FCA26D path='/usr/lib/system/libsystem_darwin.dylib'
+ 		          __TEXT [0x0000000188e14000 - 0x0000000188e1eff8) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d9045958 - 0x00000001d90482d8) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e0766780 - 0x00000001e0766bc8) slide = 0x5630000
+ 		          __DATA [0x00000001db272ec8 - 0x00000001db272ed8) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc3640a8 - 0x00000001dc3640d8) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000226fb5000.
+ address=0x0000000226fb5000 uuid=7652DD82-27A4-371B-ACC6-57DFA971FC98 path='/usr/lib/system/libsystem_darwindirectory.dylib'
+ 		          __TEXT [0x0000000226fb5000 - 0x0000000226fb9000) slide = 0x5630000
+ 		    __DATA_CONST [0x0000000233e6fa50 - 0x0000000233e6fbd8) slide = 0x5630000
+ 		    __AUTH_CONST [0x000000023d95ec20 - 0x000000023d95ef60) slide = 0x5630000
+ 		          __DATA [0x00000002371cc468 - 0x00000002371cc4a8) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x000000019230b000.
+ address=0x000000019230b000 uuid=F1C4DE88-AB59-3D92-A94C-3C00E2A4A57D path='/usr/lib/system/libsystem_dnssd.dylib'
+ 		          __TEXT [0x000000019230b000 - 0x0000000192314000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90ddae0 - 0x00000001d90ddb58) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e1121358 - 0x00000001e1121540) slide = 0x5630000
+ 		          __DATA [0x00000001db36d9e0 - 0x00000001db36da10) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000185900000.
+ address=0x0000000185900000 uuid=E52FAB77-7424-3679-864F-350DE6B07098 path='/usr/lib/system/libsystem_featureflags.dylib'
+ 		          __TEXT [0x0000000185900000 - 0x0000000185903000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d902d100 - 0x00000001d902d140) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e01f9eb0 - 0x00000001e01fa030) slide = 0x5630000
+ 		          __DATA [0x00000001db1b2be8 - 0x00000001db1b2c21) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc340428 - 0x00000001dc340438) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000185aa1000.
+ address=0x0000000185aa1000 uuid=94F4C112-C039-37F3-9956-C05CA70E4B04 path='/usr/lib/system/libsystem_info.dylib'
+ 		          __TEXT [0x0000000185aa1000 - 0x0000000185acdffc) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d9031f08 - 0x00000001d9032468) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e02011f0 - 0x00000001e0202388) slide = 0x5630000
+ 		          __AUTH [0x00000001dc7e0620 - 0x00000001dc7e07f0) slide = 0x5630000
+ 		          __DATA [0x00000001db1cc0f8 - 0x00000001db1ccc88) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc34d870 - 0x00000001dc34db18) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x000000019226c000.
+ address=0x000000019226c000 uuid=06608DC1-58D9-3795-BE74-84D9737D1659 path='/usr/lib/system/libsystem_m.dylib'
+ 		          __TEXT [0x000000019226c000 - 0x00000001922a2ff4) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e111f438 - 0x00000001e111f458) slide = 0x5630000
+ 		          __DATA [0x00000001db36aed4 - 0x00000001db36aed8) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000185882000.
+ address=0x0000000185882000 uuid=FAA92B9B-9273-3C30-BB9E-36346ECA2FAF path='/usr/lib/system/libsystem_malloc.dylib'
+ 		          __TEXT [0x0000000185882000 - 0x00000001858b9000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d902cf10 - 0x00000001d902d100) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e01e5298 - 0x00000001e01e5b48) slide = 0x5630000
+ 		          __AUTH [0x00000001dc7d4000 - 0x00000001dc7dc000) slide = 0x5630000
+ 		          __DATA [0x00000001db1b08f0 - 0x00000001db1b2be4) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc33c7e0 - 0x00000001dc33c9f0) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x000000018b0c1000.
+ address=0x000000018b0c1000 uuid=ED3AC279-A020-3E28-9BA5-970455B5C81F path='/usr/lib/system/libsystem_networkextension.dylib'
+ 		          __TEXT [0x000000018b0c1000 - 0x000000018b0daff8) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d9055278 - 0x00000001d90558f0) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e08838c8 - 0x00000001e08844e8) slide = 0x5630000
+ 		          __DATA [0x00000001db2985f0 - 0x00000001db298cc0) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc39a798 - 0x00000001dc39a7d8) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000189287000.
+ address=0x0000000189287000 uuid=0E24E20B-61F4-3B59-956D-D31845BAF6F6 path='/usr/lib/system/libsystem_notify.dylib'
+ 		          __TEXT [0x0000000189287000 - 0x0000000189298000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d9048ff0 - 0x00000001d9049148) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e078e100 - 0x00000001e078e480) slide = 0x5630000
+ 		          __DATA [0x00000001db27bf00 - 0x00000001db27bf51) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc3671c8 - 0x00000001dc3671d0) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000190b1e000.
+ address=0x0000000190b1e000 uuid=5E8EB785-5F0D-3D8F-B75A-33A12831CA80 path='/usr/lib/system/libsystem_sandbox.dylib'
+ 		          __TEXT [0x0000000190b1e000 - 0x0000000190b23ff4) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90d4658 - 0x00000001d90d46d8) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e0f2cb60 - 0x00000001e0f2cd68) slide = 0x5630000
+ 		          __DATA [0x00000001db343f88 - 0x00000001db343fb0) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000192304000.
+ address=0x0000000192304000 uuid=0A37B0C4-518F-343B-9542-299958362705 path='/usr/lib/system/libsystem_secinit.dylib'
+ 		          __TEXT [0x0000000192304000 - 0x0000000192306ffc) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90dda50 - 0x00000001d90ddac0) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e1120e98 - 0x00000001e1121158) slide = 0x5630000
+ 		          __DATA [0x00000001db36d9a0 - 0x00000001db36d9e0) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000185a2c000.
+ address=0x0000000185a2c000 uuid=A7228B5D-53C7-3FE9-84E4-2A8C04DCF051 path='/usr/lib/system/libsystem_kernel.dylib'
+ 		          __TEXT [0x0000000185a2c000 - 0x0000000185a67000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d902f790 - 0x00000001d9031a70) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e0200028 - 0x00000001e0200148) slide = 0x5630000
+ 		          __DATA [0x00000001db1bbe18 - 0x00000001db1bc090) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc3442c8 - 0x00000001dc34499c) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000185a9a000.
+ address=0x0000000185a9a000 uuid=785BF993-F73B-36C1-A5BA-CCCE6C6DA879 path='/usr/lib/system/libsystem_platform.dylib'
+ 		          __TEXT [0x0000000185a9a000 - 0x0000000185aa0ffc) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d9031ee8 - 0x00000001d9031f08) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e0200fe0 - 0x00000001e02011f0) slide = 0x5630000
+ 		          __DATA [0x00000001db1cc0b8 - 0x00000001db1cc0f8) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc34d858 - 0x00000001dc34d86c) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000185a67000.
+ address=0x0000000185a67000 uuid=449BBAD3-F7EF-371D-9A59-FD4FFA78289B path='/usr/lib/system/libsystem_pthread.dylib'
+ 		          __TEXT [0x0000000185a67000 - 0x0000000185a73ff4) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d9031a70 - 0x00000001d9031aa8) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e0200148 - 0x00000001e0200378) slide = 0x5630000
+ 		          __DATA [0x00000001db1c0000 - 0x00000001db1cc046) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc348000 - 0x00000001dc34d838) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x000000018cb29000.
+ address=0x000000018cb29000 uuid=8CC1A170-0335-3592-B3EE-DA7442D0A4C8 path='/usr/lib/system/libsystem_symptoms.dylib'
+ 		          __TEXT [0x000000018cb29000 - 0x000000018cb31ff4) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d905c0e8 - 0x00000001d905c298) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e09ccdd0 - 0x00000001e09cd098) slide = 0x5630000
+ 		          __DATA [0x00000001db2c96e0 - 0x00000001db2c9720) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc3a71a8 - 0x00000001dc3a71b8) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x00000001857c8000.
+ address=0x00000001857c8000 uuid=D243654E-BD35-337C-9714-B0B462FA20CA path='/usr/lib/system/libsystem_trace.dylib'
+ 		          __TEXT [0x00000001857c8000 - 0x00000001857e3000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001e01e1ef8 - 0x00000001e01e2808) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e01e2808 - 0x00000001e01e3680) slide = 0x5630000
+ 		          __AUTH [0x00000001dc7d28d0 - 0x00000001dc7d2a88) slide = 0x5630000
+ 		          __DATA [0x00000001db1a8368 - 0x00000001db1a8590) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc33c298 - 0x00000001dc33c708) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x00000001922dd000.
+ address=0x00000001922dd000 uuid=B63F6CC1-47F9-34D0-A6A7-8B4C8B6389DB path='/usr/lib/system/libunwind.dylib'
+ 		          __TEXT [0x00000001922dd000 - 0x00000001922e9000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90dd310 - 0x00000001d90dd630) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e1120410 - 0x00000001e1120520) slide = 0x5630000
+ 		          __DATA [0x00000001db36af60 - 0x00000001db36b961) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000185781000.
+ address=0x0000000185781000 uuid=147EA529-CECC-34FB-8250-B2A3893D3C3E path='/usr/lib/system/libxpc.dylib'
+ 		          __TEXT [0x0000000185781000 - 0x00000001857c8000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001e01db8c0 - 0x00000001e01e1ef8) slide = 0x5630000
+ 		          __DATA [0x00000001db1a75f8 - 0x00000001db1a8368) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc33b758 - 0x00000001dc33c298) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000185a10000.
+ address=0x0000000185a10000 uuid=C8FC8E27-F2CD-3CD7-9933-19E10526F012 path='/usr/lib/libc++abi.dylib'
+ 		          __TEXT [0x0000000185a10000 - 0x0000000185a2c000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d902f338 - 0x00000001d902f790) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e01fccc8 - 0x00000001e0200028) slide = 0x5630000
+ 		          __AUTH [0x00000001dc7e0578 - 0x00000001dc7e05d0) slide = 0x5630000
+ 		          __DATA [0x00000001db1bbac0 - 0x00000001db1bbe18) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc3442a0 - 0x00000001dc3442c8) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000185698000.
+ address=0x0000000185698000 uuid=375F98A8-1D18-3DA7-92A3-B7964847B03A path='/usr/lib/libobjc.A.dylib'
+ 		          __TEXT [0x0000000185698000 - 0x00000001856e6fe1) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001e01d4000 - 0x00000001e01d4fb8) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e01d4fc0 - 0x00000001e01d5bd0) slide = 0x5630000
+ 		          __AUTH [0x00000001dc7cfc70 - 0x00000001dc7cfce8) slide = 0x5630000
+ 		          __DATA [0x00000001db1a4000 - 0x00000001db1a75e0) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc336bc0 - 0x00000001dc3399d0) slide = 0x5630000
+ 		       __OBJC_RO [0x00000001d48fd3f0 - 0x00000001d9028ae8) slide = 0x5630000
+ 		       __OBJC_RW [0x00000001dc118000 - 0x00000001dc336ba8) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x00000001922e9000.
+ address=0x00000001922e9000 uuid=4EE22D95-227B-3599-9B05-C4403E0DEB4F path='/usr/lib/liboah.dylib'
+ 		          __TEXT [0x00000001922e9000 - 0x00000001922f1000) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d90dd630 - 0x00000001d90dd668) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e1120520 - 0x00000001e1120888) slide = 0x5630000
+ 		          __DATA [0x00000001db36b968 - 0x00000001db36c990) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ Adding new image at address=0x0000000185982000.
+ address=0x0000000185982000 uuid=F9B004FE-F1D6-307E-B399-568B8AC0CB6F path='/usr/lib/libc++.1.dylib'
+ 		          __TEXT [0x0000000185982000 - 0x0000000185a0fff8) slide = 0x5630000
+ 		    __DATA_CONST [0x00000001d902e9c8 - 0x00000001d902f338) slide = 0x5630000
+ 		    __AUTH_CONST [0x00000001e01fa990 - 0x00000001e01fccc8) slide = 0x5630000
+ 		          __AUTH [0x00000001dc7de0c0 - 0x00000001dc7e0578) slide = 0x5630000
+ 		          __DATA [0x00000001db1b5000 - 0x00000001db1bbac0) slide = 0x5630000
+ 		    __DATA_DIRTY [0x00000001dc342fc0 - 0x00000001dc3442a0) slide = 0x5630000
+ 		      __LINKEDIT [0x000000023ff38000 - 0x0000000277b30000) slide = 0x5630000
+ DynamicLoaderDarwin::ModulesDidLoad[0] 68092300-D766-369D-8407-BF255E29E70F (arm64e) "/usr/lib/libSystem.B.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[1] 2FD588CE-4B3E-30C3-98D0-77B748F64972 (arm64e) "/usr/lib/system/libcache.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[2] 02516353-E773-3B1E-8B5E-EEE35F336394 (arm64e) "/usr/lib/system/libcommonCrypto.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[3] 017AE3FD-51D3-3724-9A6A-6E8DC106A0E3 (arm64e) "/usr/lib/system/libcompiler_rt.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[4] 4DD7ACBE-4435-34D5-BEB0-7C2E8C613E78 (arm64e) "/usr/lib/system/libcopyfile.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[5] FA157EF5-193D-3328-B9D6-FCF7A6A05F30 (arm64e) "/usr/lib/system/libcorecrypto.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[6] 5AA1649C-EF1D-39F7-A66C-4C5D2E53C474 (arm64e) "/usr/lib/system/libdispatch.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[7] E5CCF5F1-9A99-35E7-BDBD-CB2D37678EA7 (arm64e) "/usr/lib/system/libdyld.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[8] 4A948E99-EE03-3A40-A3F7-3AD957431D4D (arm64e) "/usr/lib/system/libkeymgr.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[9] 961E2405-896A-3684-A4F2-A42D3643C1A8 (arm64e) "/usr/lib/system/libmacho.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[10] B2EA6DAE-0575-3CEC-B5DF-4ED697210418 (arm64e) "/usr/lib/system/libquarantine.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[11] D7AA3DBF-49C4-3211-BF5F-73E43FFC0D0D (arm64e) "/usr/lib/system/libremovefile.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[12] 3DEC29CF-6C9F-3E68-858C-1315AD424965 (arm64e) "/usr/lib/system/libsystem_asl.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[13] 08C06922-716A-33C5-8DC0-C553E9884D4D (arm64e) "/usr/lib/system/libsystem_blocks.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[14] CC7A439E-F104-3047-995C-9A5A3CC4A442 (arm64e) "/usr/lib/system/libsystem_c.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[15] A1528C13-7072-3AD5-9F3D-6EBCAFA3BBD8 (arm64e) "/usr/lib/system/libsystem_collections.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[16] AE8816C7-B7E5-369B-BEBD-AF4E936DE727 (arm64e) "/usr/lib/system/libsystem_configuration.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[17] 62ED29C9-EC32-31F6-9457-CC04A8F0F134 (arm64e) "/usr/lib/system/libsystem_containermanager.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[18] D795E42D-9766-35C6-A093-E9CF7E896C8B (arm64e) "/usr/lib/system/libsystem_coreservices.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[19] 34DF5BC7-2B49-3642-AEE7-B68180FCA26D (arm64e) "/usr/lib/system/libsystem_darwin.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[20] 7652DD82-27A4-371B-ACC6-57DFA971FC98 (arm64e) "/usr/lib/system/libsystem_darwindirectory.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[21] F1C4DE88-AB59-3D92-A94C-3C00E2A4A57D (arm64e) "/usr/lib/system/libsystem_dnssd.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[22] E52FAB77-7424-3679-864F-350DE6B07098 (arm64e) "/usr/lib/system/libsystem_featureflags.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[23] 94F4C112-C039-37F3-9956-C05CA70E4B04 (arm64e) "/usr/lib/system/libsystem_info.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[24] 06608DC1-58D9-3795-BE74-84D9737D1659 (arm64e) "/usr/lib/system/libsystem_m.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[25] FAA92B9B-9273-3C30-BB9E-36346ECA2FAF (arm64e) "/usr/lib/system/libsystem_malloc.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[26] ED3AC279-A020-3E28-9BA5-970455B5C81F (arm64e) "/usr/lib/system/libsystem_networkextension.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[27] 0E24E20B-61F4-3B59-956D-D31845BAF6F6 (arm64e) "/usr/lib/system/libsystem_notify.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[28] 5E8EB785-5F0D-3D8F-B75A-33A12831CA80 (arm64e) "/usr/lib/system/libsystem_sandbox.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[29] 0A37B0C4-518F-343B-9542-299958362705 (arm64e) "/usr/lib/system/libsystem_secinit.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[30] A7228B5D-53C7-3FE9-84E4-2A8C04DCF051 (arm64e) "/usr/lib/system/libsystem_kernel.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[31] 785BF993-F73B-36C1-A5BA-CCCE6C6DA879 (arm64e) "/usr/lib/system/libsystem_platform.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[32] 449BBAD3-F7EF-371D-9A59-FD4FFA78289B (arm64e) "/usr/lib/system/libsystem_pthread.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[33] 8CC1A170-0335-3592-B3EE-DA7442D0A4C8 (arm64e) "/usr/lib/system/libsystem_symptoms.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[34] D243654E-BD35-337C-9714-B0B462FA20CA (arm64e) "/usr/lib/system/libsystem_trace.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[35] B63F6CC1-47F9-34D0-A6A7-8B4C8B6389DB (arm64e) "/usr/lib/system/libunwind.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[36] 147EA529-CECC-34FB-8250-B2A3893D3C3E (arm64e) "/usr/lib/system/libxpc.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[37] C8FC8E27-F2CD-3CD7-9933-19E10526F012 (arm64e) "/usr/lib/libc++abi.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[38] 375F98A8-1D18-3DA7-92A3-B7964847B03A (arm64e) "/usr/lib/libobjc.A.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[39] 4EE22D95-227B-3599-9B05-C4403E0DEB4F (arm64e) "/usr/lib/liboah.dylib"
+ DynamicLoaderDarwin::ModulesDidLoad[40] F9B004FE-F1D6-307E-B399-568B8AC0CB6F (arm64e) "/usr/lib/libc++.1.dylib"
+ Breakpoint::ModulesChanged: num_modules: 41 load: 1 delete_locations: 0
+
+ Breakpoint::ModulesChanged: num_modules: 41 load: 1 delete_locations: 0
+
+ Hit breakpoint location: -6.1: 
+  module = /usr/lib/dyld
+  symbol = lldb_image_notifier
+  address = 0x0000000185732414
+  resolved = true
+  hardware = false
+  hit count = 1   
+, continuing.
+
+ StopInfo::ShouldStop async callback says we should not stop, returning ShouldStop of false.
+ ThreadList::ShouldStop overall should_stop = 0
+ ThreadList::ShouldReportStop 1 threads
+ Thread::ShouldReportStop() tid = 0xa2a79: returning vote 0 for current plan
+ Returning no opinion
+ Process::ShouldBroadcastEvent: should_resume: 1 state: stopped was_restarted: 0 report_stop_vote: 0.
+ Process::ShouldBroadcastEvent (0x12b6f79b0) Restarting process from state: stopped
+ Process::PrivateResume() m_stop_id = 5, public state: running private state: stopped
+ Thread::PushPlan(0x0x101ddce38): "Single stepping past breakpoint site 9 at 0x185732414", tid = 0xa2a79.
+ WillResume Thread #1 (0x0x101ddce38): tid = 0xa2a79, pc = 0x185732414, sp = 0x16fdfddc0, fp = 0x16fdfdf80, plan = 'Step over breakpoint trap', state = stepping, stop others = 1
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() remove at addr = 0x185732414
+ (plugin = gdb-remote, state = running)
+ Process thinks the process has resumed.
+ Process::ShouldBroadcastEvent (0x12b6f79b0) => new state: stopped, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 35296) suppressing state stopped (old state running): should_broadcast == false
+ timeout = <infinite>, event_sp)...
+ Process::ShouldBroadcastEvent (0x101dedae0) => new state: running, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 35296) suppressing state running (old state running): should_broadcast == false
+ timeout = <infinite>, event_sp)...
+ (plugin = gdb-remote, state = stopped)
+ (plugin = gdb-remote, state = stopped, stop_id = 6
+ 0x101ddce38: tid = 0xa2a79: stop info = <NULL> (stop_id = 6)
+ 0x101ddce38: tid = 0xa2a79: stop info = trace (stop_id = 6)
+ 
+ ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
+ Thread::ShouldStop(0x101ddce38) for tid = 0xa2a79 0xa2a79, pc = 0x0000000185732418
+ ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
+ Plan stack initial state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+      Element 1: Single stepping past breakpoint site 9 at 0x185732414
+
+ Step over breakpoint stopped for reason: trace.
+ Plan Step over breakpoint trap should stop: 0.
+ Completed step over breakpoint plan.
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() add at addr = 0x185732414
+ Plan Step over breakpoint trap auto-continue: true.
+ Popping plan: "Step over breakpoint trap", tid = 0xa2a79.
+ Plan stack final state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+    Completed plan stack:
+      Element 0: Single stepping past breakpoint site 9 at 0x185732414
+
+ vvvvvvvv Thread::ShouldStop End (returning 0) vvvvvvvv
+ ThreadList::ShouldStop overall should_stop = 0
+ ThreadList::ShouldReportStop 1 threads
+ Thread::ShouldReportStop() tid = 0xa2a79: returning vote for complete stack's back plan
+ Returning vote: no
+ Returning no
+ Process::ShouldBroadcastEvent: should_resume: 1 state: stopped was_restarted: 0 report_stop_vote: -1.
+ Process::ShouldBroadcastEvent (0x101dec0f0) Restarting process from state: stopped
+ Process::PrivateResume() m_stop_id = 6, public state: running private state: stopped
+ WillResume Thread #1 (0x0x101ddce38): tid = 0xa2a79, pc = 0x185732418, sp = 0x16fdfddc0, fp = 0x16fdfdf80, plan = 'base plan', state = running, stop others = 0
+ (plugin = gdb-remote, state = running)
+ Process thinks the process has resumed.
+ Process::ShouldBroadcastEvent (0x101dec0f0) => new state: stopped, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 35296) suppressing state stopped (old state running): should_broadcast == false
+ timeout = <infinite>, event_sp)...
+ Process::ShouldBroadcastEvent (0x12b6f79b0) => new state: running, last broadcast state: running - NO
+ Process::HandlePrivateEvent (pid = 35296) suppressing state running (old state running): should_broadcast == false
+ timeout = <infinite>, event_sp)...
+ (plugin = gdb-remote, state = stopped)
+ (plugin = gdb-remote, state = stopped, stop_id = 7
+ 0x101ddce38: tid = 0xa2a79: stop info = <NULL> (stop_id = 7)
+ 0x101ddce38: tid = 0xa2a79: stop info = breakpoint 1.1 (stop_id = 7)
+ 
+ ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
+ Thread::ShouldStop(0x101ddce38) for tid = 0xa2a79 0xa2a79, pc = 0x0000000100003e80
+ ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
+ Plan stack initial state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+
+ Hit breakpoint location: 1.1: 
+  module = /Users/hampana/Documents/c-activity-sets-hampana/set03/problem05
+  symbol = main
+  address = 0x0000000100003e80
+  resolved = true
+  hardware = false
+  hit count = 1   
+, stopping.
+
+ Base plan discarding thread plans for thread tid = 0xa2a79 (breakpoint hit.)
+ Discarding thread plans for thread (tid = 0xa2a79, force 0)
+ Base plan says should stop: 1.
+ Plan stack final state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+
+ vvvvvvvv Thread::ShouldStop End (returning 1) vvvvvvvv
+ ThreadList::ShouldStop overall should_stop = 1
+ Process::ShouldBroadcastEvent (0x12b768a20) => new state: stopped, last broadcast state: stopped - YES
+ Process::HandlePrivateEvent (pid = 35296) broadcasting new state stopped (old state stopped) to public
+ timeout = <infinite>, event_sp)...
+ (plugin = gdb-remote, state = stopped, restarted = 0)
+ (plugin = gdb-remote, state = stopped) -- unlocking run lock
+ Process::PerformAction returning from action with m_should_stop: 1.
+ Frame #0 not recognized
+ Processing command: s
+ HandleCommand, cmd_obj : 'thread step-in'
+ HandleCommand, (revised) command_string: 'thread step-in'
+ HandleCommand, wants_raw_input:'False'
+ HandleCommand, command line after removing command name(s): ''
+ Thread::PushPlan(0x0x101ddce38): "Stepping one instruction past 0x0000000100003e80 stepping into calls", tid = 0xa2a79.
+ (plugin = gdb-remote) -- locking run lock
+ Process::PrivateResume() m_stop_id = 7, public state: stopped private state: stopped
+ Target::AddBreakpoint (internal = yes) => break_id = -7: names = {'start_wqthread', '_pthread_wqthread', '_pthread_start'}, modules(2) = libsystem_c.dylib, libSystem.B.dylib
+
+
+ Thread::PushPlan(0x0x101ddce38): "Single stepping past breakpoint site 8 at 0x100003e80", tid = 0xa2a79.
+ WillResume Thread #1 (0x0x101ddce38): tid = 0xa2a79, pc = 0x100003e80, sp = 0x16fdff070, fp = 0x16fdff290, plan = 'Step over breakpoint trap', state = stepping, stop others = 1
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() remove at addr = 0x100003e80
+ (plugin = gdb-remote, state = running)
+ Current Plan for thread 1(0x101ddce38) (0xa2a79, stepping): Step over breakpoint trap being asked whether we should report run.
+ Process::ShouldBroadcastEvent (0x101c040c0) => new state: running, last broadcast state: running - YES
+ Process thinks the process has resumed.
+ Process::HandlePrivateEvent (pid = 35296) broadcasting new state running (old state running) to public
+ Process::PushProcessIOHandler pushing IO handler
+ Process::HandlePrivateEvent updated m_iohandler_sync to 2
+ timeout = <infinite>, event_sp)...
+ (plugin = gdb-remote, state = running, restarted = 0)
+ waited from m_iohandler_sync to change from 1. New value is 2.
+ HandleCommand, command succeeded
+ (plugin = gdb-remote, state = stopped)
+ (plugin = gdb-remote, state = stopped, stop_id = 8
+ 0x101ddce38: tid = 0xa2a79: stop info = <NULL> (stop_id = 8)
+ 0x101ddce38: tid = 0xa2a79: stop info = trace (stop_id = 8)
+ 
+ ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
+ Thread::ShouldStop(0x101ddce38) for tid = 0xa2a79 0xa2a79, pc = 0x0000000100003e84
+ ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
+ Plan stack initial state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+      Element 1: Stepping one instruction past 0x0000000100003e80 stepping into calls
+      Element 2: Single stepping past breakpoint site 8 at 0x100003e80
+
+ Step over breakpoint stopped for reason: trace.
+ Plan Step over breakpoint trap should stop: 1.
+ Completed step over breakpoint plan.
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() add at addr = 0x100003e80
+ Popping plan: "Step over breakpoint trap", tid = 0xa2a79.
+ Plan Step over single instruction should stop: 1.
+ Completed single instruction step plan.
+ Popping plan: "Step over single instruction", tid = 0xa2a79.
+ Plan stack final state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+    Completed plan stack:
+      Element 0: Single stepping past breakpoint site 8 at 0x100003e80
+      Element 1: Stepping one instruction past 0x0000000100003e80 stepping into calls
+
+ vvvvvvvv Thread::ShouldStop End (returning 1) vvvvvvvv
+ ThreadList::ShouldStop overall should_stop = 1
+ Process::ShouldBroadcastEvent (0x1028042b0) => new state: stopped, last broadcast state: stopped - YES
+ Process::HandlePrivateEvent (pid = 35296) broadcasting new state stopped (old state stopped) to public
+ timeout = <infinite>, event_sp)...
+ (plugin = gdb-remote, state = stopped, restarted = 0)
+ (plugin = gdb-remote, state = stopped) -- unlocking run lock
+ Frame #0 not recognized
+ Processing command: s
+ HandleCommand, cmd_obj : 'thread step-in'
+ HandleCommand, (revised) command_string: 'thread step-in'
+ HandleCommand, wants_raw_input:'False'
+ HandleCommand, command line after removing command name(s): ''
+ Thread::PushPlan(0x0x101ddce38): "Stepping one instruction past 0x0000000100003e84 stepping into calls", tid = 0xa2a79.
+ (plugin = gdb-remote) -- locking run lock
+ Process::PrivateResume() m_stop_id = 8, public state: stopped private state: stopped
+ WillResume Thread #1 (0x0x101ddce38): tid = 0xa2a79, pc = 0x100003e84, sp = 0x16fdff050, fp = 0x16fdff290, plan = 'Step over single instruction', state = stepping, stop others = 1
+ (plugin = gdb-remote, state = running)
+ Current Plan for thread 1(0x101ddce38) (0xa2a79, stepping): Step over single instruction being asked whether we should report run.
+ Process::ShouldBroadcastEvent (0x102804140) => new state: running, last broadcast state: running - YES
+ Process thinks the process has resumed.
+ Process::HandlePrivateEvent (pid = 35296) broadcasting new state running (old state running) to public
+ Process::PushProcessIOHandler pushing IO handler
+ Process::HandlePrivateEvent updated m_iohandler_sync to 3
+ waited from m_iohandler_sync to change from 2. New value is 3.
+ HandleCommand, command succeeded
+ (plugin = gdb-remote, state = running, restarted = 0)
+ timeout = <infinite>, event_sp)...
+ (plugin = gdb-remote, state = stopped)
+ (plugin = gdb-remote, state = stopped, stop_id = 9
+ 0x101ddce38: tid = 0xa2a79: stop info = <NULL> (stop_id = 9)
+ 0x101ddce38: tid = 0xa2a79: stop info = trace (stop_id = 9)
+ 
+ ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
+ Thread::ShouldStop(0x101ddce38) for tid = 0xa2a79 0xa2a79, pc = 0x0000000100003e88
+ ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
+ Plan stack initial state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+      Element 1: Stepping one instruction past 0x0000000100003e84 stepping into calls
+
+ Plan Step over single instruction should stop: 1.
+ Completed single instruction step plan.
+ Popping plan: "Step over single instruction", tid = 0xa2a79.
+ Plan stack final state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+    Completed plan stack:
+      Element 0: Stepping one instruction past 0x0000000100003e84 stepping into calls
+
+ vvvvvvvv Thread::ShouldStop End (returning 1) vvvvvvvv
+ ThreadList::ShouldStop overall should_stop = 1
+ Process::ShouldBroadcastEvent (0x102804140) => new state: stopped, last broadcast state: stopped - YES
+ Process::HandlePrivateEvent (pid = 35296) broadcasting new state stopped (old state stopped) to public
+ timeout = <infinite>, event_sp)...
+ (plugin = gdb-remote, state = stopped, restarted = 0)
+ (plugin = gdb-remote, state = stopped) -- unlocking run lock
+ Frame #0 not recognized
+ Processing command: s
+ HandleCommand, cmd_obj : 'thread step-in'
+ HandleCommand, (revised) command_string: 'thread step-in'
+ HandleCommand, wants_raw_input:'False'
+ HandleCommand, command line after removing command name(s): ''
+ Thread::PushPlan(0x0x101ddce38): "Stepping one instruction past 0x0000000100003e88 stepping into calls", tid = 0xa2a79.
+ (plugin = gdb-remote) -- locking run lock
+ Process::PrivateResume() m_stop_id = 9, public state: stopped private state: stopped
+ WillResume Thread #1 (0x0x101ddce38): tid = 0xa2a79, pc = 0x100003e88, sp = 0x16fdff050, fp = 0x16fdff290, plan = 'Step over single instruction', state = stepping, stop others = 1
+ (plugin = gdb-remote, state = running)
+ Current Plan for thread 1(0x101ddce38) (0xa2a79, stepping): Step over single instruction being asked whether we should report run.
+ Process::ShouldBroadcastEvent (0x102804170) => new state: running, last broadcast state: running - YES
+ Process::HandlePrivateEvent (pid = 35296) broadcasting new state running (old state running) to public
+ Process::PushProcessIOHandler pushing IO handler
+ Process thinks the process has resumed.
+ waited from m_iohandler_sync to change from 3. New value is 4.
+ HandleCommand, command succeeded
+ Process::HandlePrivateEvent updated m_iohandler_sync to 4
+ timeout = <infinite>, event_sp)...
+ (plugin = gdb-remote, state = running, restarted = 0)
+ (plugin = gdb-remote, state = stopped)
+ (plugin = gdb-remote, state = stopped, stop_id = 10
+ 0x101ddce38: tid = 0xa2a79: stop info = <NULL> (stop_id = 10)
+ 0x101ddce38: tid = 0xa2a79: stop info = trace (stop_id = 10)
+ 
+ ThreadList::ShouldStop: 1 threads, 1 unsuspended threads
+ Thread::ShouldStop(0x101ddce38) for tid = 0xa2a79 0xa2a79, pc = 0x0000000100003e8c
+ ^^^^^^^^ Thread::ShouldStop Begin ^^^^^^^^
+ Plan stack initial state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+      Element 1: Stepping one instruction past 0x0000000100003e88 stepping into calls
+
+ Plan Step over single instruction should stop: 1.
+ Completed single instruction step plan.
+ Popping plan: "Step over single instruction", tid = 0xa2a79.
+ Plan stack final state:
+  thread #1: tid = 0xa2a79:
+    Active plan stack:
+      Element 0: Base thread plan.
+    Completed plan stack:
+      Element 0: Stepping one instruction past 0x0000000100003e88 stepping into calls
+
+ vvvvvvvv Thread::ShouldStop End (returning 1) vvvvvvvv
+ ThreadList::ShouldStop overall should_stop = 1
+ Process::ShouldBroadcastEvent (0x101c05770) => new state: stopped, last broadcast state: stopped - YES
+ Process::HandlePrivateEvent (pid = 35296) broadcasting new state stopped (old state stopped) to public
+ timeout = <infinite>, event_sp)...
+ (plugin = gdb-remote, state = stopped, restarted = 0)
+ (plugin = gdb-remote, state = stopped) -- unlocking run lock
+ Frame #0 not recognized
+ Processing command: q
+ HandleCommand, cmd_obj : 'quit'
+ HandleCommand, (revised) command_string: 'quit'
+ HandleCommand, wants_raw_input:'False'
+ HandleCommand, command line after removing command name(s): ''
+ HandleCommand, command did not succeed
+ Discarding thread plans for thread (tid = 0xa2a79, force 1)
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() remove at addr = 0x100003e80
+ GDBRemoteCommunicationClient::SendGDBStoppointTypePacket() remove at addr = 0x185732414
+ ::waitpid (pid = 35296, &status, 0) => pid = 35296, status = 0x00000009 (SIGNALED), signal = 9, exit_status = -1
+ pid = 35296, signal = 9, status = -1
+ (plugin = gdb-remote status=9 (0x00000009), description="killed")
+ Process::ControlPrivateStateThread (signal = 1)
+ Sending control event of type: 1.
+ Process::RunPrivateStateThread (arg = 0x12c191200, pid = 35296) got a control event: 1
+ Process::RunPrivateStateThread (arg = 0x12c191200, pid = 35296) thread exiting...
+ Target::RemoveBreakpointByID (break_id = -6, internal = yes)
+
+ Target::DisableBreakpointByID (break_id = -6, internal = yes)
+
+ Target::DisableAllWatchpoints
+
+ Target::ClearAllWatchpointHitCounts
+
+ Target::ClearAllWatchpointHistoricValues
+
+ Went to stop the private state thread, but it was already invalid.
+ ::waitpid (pid = 35297, &status, 0) => pid = 35297, status = 0x00000002 (SIGNALED), signal = 2, exit_status = -1
+ Couldn't get scratch TypeSystemClang

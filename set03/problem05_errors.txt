@@ -1,0 +1,16 @@
+base) hampana@Hampana set03 % gcc problem05.c -o problem05           
+(base) hampana@Hampana set03 % gcc -g -O0 problem05.c -o problem05.exe
+(base) hampana@Hampana set03 % lldb ./problem05                       
+(lldb) target create "./problem05"
+Current executable set to '/Users/hampana/Documents/c-activity-sets-hampana/set03/problem05' (arm64).
+(lldb) r
+Process 35266 launched: '/Users/hampana/Documents/c-activity-sets-hampana/set03/problem05' (arm64)
+Enter the size of the array:16
+The prime numbers between 2 and 16 are:
+2
+3
+5
+7
+11
+13
+Process 35266 exited with status = 0 (0x00000000)
